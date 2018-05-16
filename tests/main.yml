@@ -1,0 +1,7 @@
+- name: "Darkbulb Topology"
+  hosts: darkbulb
+  gather_facts: no
+  become: yes
+
+  roles:
+    - test

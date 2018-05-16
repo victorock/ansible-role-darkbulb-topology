@@ -1,0 +1,61 @@
+<domain type='qemu'>
+  <name>leaf04-ios</name>
+  <memory unit='MiB'>1024</memory>
+  <vcpu placement='auto'>1</vcpu>
+  <resource>
+    <partition>/darkbulb-ios</partition>
+  </resource>
+  <os>
+    <type arch='x86_64'>hvm</type>
+    <boot dev='hd'/>
+  </os>
+  <cpu mode='host-model' />
+  <on_poweroff>destroy</on_poweroff>
+  <on_reboot>restart</on_reboot>
+  <on_crash>destroy</on_crash>
+  <devices>
+    <disk type='file' device='disk'>
+      <driver name='qemu' type='qcow2'/>
+      <source file='{{ darkbulb_topology_pool.path }}/leaf04-ios.img'/>
+      <target dev='hda' bus='ide'/>
+    </disk>
+    <interface type='network'>
+      <source network="{{ darkbulb_topology_network.name }}"/>
+      <model type='e1000'/>
+    </interface>
+    <interface type='udp'>
+      <source address='127.0.0.1' port='11004'>
+        <local address='127.0.0.1' port='24001'/>
+      </source>
+      <target dev='gig01'/>
+      <model type='e1000'/>
+    </interface>
+    <interface type='udp'>
+      <source address='127.0.0.1' port='12004'>
+        <local address='127.0.0.1' port='24002'/>
+      </source>
+      <target dev='gig02'/>
+      <model type='e1000'/>
+    </interface>
+    <interface type='udp'>
+      <source address='127.0.0.1' port='23003'>
+        <local address='127.0.0.1' port='24003'/>
+      </source>
+      <target dev='gig03'/>
+      <model type='e1000'/>
+    </interface>
+    <interface type='udp'>
+      <source address='127.0.0.1' port='32002'>
+        <local address='127.0.0.1' port='24004'/>
+      </source>
+      <target dev='gig04'/>
+      <model type='e1000'/>
+    </interface>
+    <serial type='pty'>
+      <target port='0' />
+    </serial>
+    <console type='pty'>
+      <target type='serial' port='0'/>
+    </console>
+  </devices>
+</domain>

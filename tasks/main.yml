@@ -1,0 +1,62 @@
+- name: "Ensure state of configuration directories"
+  file:
+    path: "{{ darkbulb_topology_config_path.remote }}"
+    owner: "{{ darkbulb_topology_instance.user }}"
+    group: "{{ darkbulb_topology_instance.user }}"
+    state: directory
+
+- name: "Ensure state of configuration subdirectories"
+  file:
+    path: "{{ darkbulb_topology_config_path.remote }}/{{ config_subdir.path }}"
+    owner: "{{ darkbulb_topology_instance.user }}"
+    group: "{{ darkbulb_topology_instance.user }}"
+    state: directory
+  with_filetree: "{{ darkbulb_topology_config_path.local }}"
+  when: config_subdir.state == 'directory'
+  loop_control:
+    loop_var: config_subdir
+    label: "directory {{ config_subdir.path }}"
+
+- name: "Ensure state of configuration files"
+  template:
+    src: "{{ template_file.src }}"
+    dest: "{{ darkbulb_topology_config_path.remote }}/{{ template_file.path }}"
+    owner: "{{ darkbulb_topology_instance.user }}"
+    group: "{{ darkbulb_topology_instance.user }}"
+  with_filetree: "{{ darkbulb_topology_config_path.local }}"
+  when: template_file.state == 'file'
+  loop_control:
+    loop_var: template_file
+    label: "template {{ template_file.path }}"
+
+- name: "Process Networks"
+  include_tasks: network.yml
+  with_filetree: "{{ darkbulb_topology_config_path.local }}/networks/"
+  when: network_config_file.state == 'file'
+  loop_control:
+    loop_var: network_config_file
+    label: "network {{ network_config_file.path }}"
+
+- name: "Process Pools"
+  include_tasks: pool.yml
+  with_filetree: "{{ darkbulb_topology_config_path.local }}/pools/"
+  when: pool_config_file.state == 'file'
+  loop_control:
+    loop_var: pool_config_file
+    label: "pool {{ pool_config_file.path }}"
+
+- name: "Process Volumes"
+  include_tasks: volume.yml
+  with_filetree: "{{ darkbulb_topology_config_path.local }}/volumes/"
+  when: volume_config_file.state == 'file'
+  loop_control:
+    loop_var: volume_config_file
+    label: "volume {{ volume_config_file.path }}"
+
+- name: "Process Instances"
+  include_tasks: instance.yml
+  with_filetree: "{{ darkbulb_topology_config_path.local }}/instances/"
+  when: instance_config_file.state == 'file'
+  loop_control:
+    loop_var: instance_config_file
+    label: "instance {{ instance_config_file.path }}"

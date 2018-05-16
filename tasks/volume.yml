@@ -1,0 +1,17 @@
+- name: "Validate volumes configuration files"
+  command:
+    virt-xml-validate \
+      "{{ darkbulb_topology_config_path.remote }}/volumes/{{ volume_config_file.path }}" \
+      storagevol
+
+- name: "Ensure state of Volume"
+  block:
+    - name: "Ensure state of Volume"
+      command:
+        virsh vol-create \
+          --file "{{ darkbulb_topology_config_path.remote }}/volumes/{{ volume_config_file.path }}"
+          --pool "{{ darkbulb_topology_pool.name }}"
+
+  rescue:
+    - name: "Volume already exists"
+      command: /bin/true

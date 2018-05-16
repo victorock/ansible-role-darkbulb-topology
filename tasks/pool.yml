@@ -1,0 +1,16 @@
+- name: "Validate pools configuration files"
+  command:
+    virt-xml-validate \
+      "{{ darkbulb_topology_config_path.remote }}/pools/{{ pool_config_file.path }}" \
+      storagepool
+
+- name: "Ensure state of Pool"
+  block:
+    - name: "Ensure state of Pool"
+      command:
+        virsh pool-create \
+          "{{ darkbulb_topology_config_path.remote }}/pools/{{ pool_config_file.path }}"
+
+  rescue:
+    - name: "Pool already exists"
+      command: /bin/true

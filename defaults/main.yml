@@ -1,0 +1,2 @@
+darkbulb_topology_user: "{{ darkbulb_user | default('darkbulb') }}"
+darkbulb_topology_homedir: "{{ darkbulb_homedir | default('/home/darkbulb') }}"

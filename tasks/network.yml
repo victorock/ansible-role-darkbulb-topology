@@ -1,0 +1,15 @@
+- name: "Validate network configuration files"
+  command:
+    virt-xml-validate \
+      "{{ darkbulb_topology_config_path.remote }}/networks/{{ network_config_file.path }}" \
+      network
+
+- name: "Ensure state of Network"
+  block:
+    - name: "Create Network"
+      command:
+        virsh net-create \
+          "{{ darkbulb_topology_config_path.remote }}/networks/{{ network_config_file.path }}"
+  rescue:
+    - name: "Network already exists"
+      command: /bin/true
