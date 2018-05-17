@@ -1,0 +1,9 @@
+- name: "network: Inactivate network [{{jxml.value.network.name}}]"
+  virt_net:
+    name:       "{{ jxml.value.network.name }}"
+    command:      "destroy"
+
+- name: "network: Ensure state of network [{{jxml.value.network.name}}]"
+  virt_net:
+    name:       "{{ jxml.value.network.name }}"
+    command:    "undefine"

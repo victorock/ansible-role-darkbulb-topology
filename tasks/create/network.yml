@@ -1,0 +1,17 @@
+- name: "network: Define network [{{jxml.value.network.name}}]"
+  virt_net:
+    name:       "{{ jxml.value.network.name }}"
+    xml:        "{{ jxml.value | to_xml }}"
+    command:    "define"
+
+- name: "network: Create network [{{jxml.value.network.name}}]"
+  virt_net:
+    name:       "{{ jxml.value.network.name }}"
+    xml:        "{{ jxml.value | to_xml }}"
+    state:      "present"
+
+- name: "network: Create network [{{jxml.value.network.name}}]"
+  virt_net:
+    name:       "{{ jxml.value.network.name }}"
+    xml:        "{{ jxml.value | to_xml }}"
+    state:      "active"

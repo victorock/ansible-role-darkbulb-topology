@@ -1,0 +1,15 @@
+- name: "destroy.volume: Generate configuration file for [{{jxml.value.volume.name}}]"
+  copy:
+    content:    "{{ jxml.value | to_xml }}"
+    dest:       "{{ darkbulb_topology.config.path }}/pools/{{ jxml.value.volume.name }}"
+    owner:      "{{ darkbulb_topology.config.user }}"
+    group:      "{{ darkbulb_topology.config.group }}"
+    validate: /usr/bin/virt-xml-validate %s storagevol
+
+- name: "destroy.volume: Delete volume [{{jxml.value.volume.name}}]"
+  command:
+    virsh vol-delete \
+    --file      "{{ darkbulb_topology.config.path }}/pools/{{ jxml.value.volume.name }}" \
+    --pool      "{{ darkbulb_topology.pools.default.pool.name }}"
+  args:
+    creates:    "{{ darkbulb_topology.pools.default.pool.target.path }}/{{ jxml.value.volume.name }}"

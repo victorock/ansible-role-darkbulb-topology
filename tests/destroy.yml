@@ -1,0 +1,13 @@
+- name: "Darkbulb Topology"
+  hosts: darkbulb
+  gather_facts: no
+  become: yes
+
+  roles:
+    - test
+
+  tasks:
+
+    - include_role:
+        name: test
+        tasks_from: "create.yml"
