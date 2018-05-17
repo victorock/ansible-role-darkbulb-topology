@@ -4,6 +4,12 @@
     xml:        "{{ jxml.value | to_xml }}"
     command:    "define"
 
+- name: "pool: Define pool [{{jxml.value.pool.name}}]"
+  virt_pool:
+    name:       "{{ jxml.value.pool.name }}"
+    xml:        "{{ jxml.value | to_xml }}"
+    state:      "active"
+
 - name: "pool: Ensure state of pool [{{jxml.value.pool.name}}]"
   virt_pool:
     name:       "{{ jxml.value.pool.name }}"
