@@ -1,10 +1,3 @@
-- name: "domain: Ensure state of domain [{{jxml.value.domain.name}}]"
-  libvirt:
-    name:       "{{ jxml.value.domain.name }}"
-    xml:        "{{ jxml.value | to_xml }}"
-    state:      "running"
-    autostart:  yes
-
 - name: "domain: Define domain [{{jxml.value.domain.name}}]"
   virt:
     name:       "{{ jxml.value.domain.name }}"
