@@ -1,3 +1,7 @@
+- name: "Set darkbulb_topology"
+  set_fact:
+    darkbulb_topology: "{{ __darkbulb_topology | combine( darkbulb_topology, recursive=True ) }}"
+
 - name: "destroy: Ensure state of configuration directories"
   file:
     path:         "{{ darkbulb_topology.config.path }}/{{ config_dir }}"
