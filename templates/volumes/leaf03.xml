@@ -6,7 +6,7 @@
     <format type="qcow2"/>
   </target>
   <backingStore>
-    <path>{{ darkbulb_topology_pool.path }}/vios_l2-adventerprisek9-m.03.2017.qcow2</path>
+    <path>/var/lib/libvirt/images/vios_l2-adventerprisek9-m.03.2017.qcow2</path>
     <format type="qcow2"/>
   </backingStore>
 </volume>

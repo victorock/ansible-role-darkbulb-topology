@@ -5,3 +5,8 @@
 
   roles:
     - test
+
+  tasks:
+    - include_role:
+        name: test
+        tasks_from: run

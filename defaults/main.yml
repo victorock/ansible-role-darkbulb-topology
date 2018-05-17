@@ -1,2 +1,28 @@
-darkbulb_topology_user: "{{ darkbulb_user | default('darkbulb') }}"
-darkbulb_topology_homedir: "{{ darkbulb_homedir | default('/home/darkbulb') }}"
+darkbulb_topology:
+  config:
+    user:       "{{ darkbulb_user | default('darkbulb') }}"
+    group:      "{{ darkbulb_user | default('darkbulb') }}"
+    path:       "{{ darkbulb_homedir | default('/home/darkbulb') }}/config/"
+    dirs:
+      -         "domains"
+      -         "volumes"
+      -         "pools"
+      -         "networks"
+  networks:
+    darkbulb:   "{{ lookup('template', 'templates/networks/darkbulb.xml') | from_xml }}"
+  pools:
+    default:   "{{ lookup('template', 'templates/pools/default.xml')     | from_xml }}"
+  volumes:
+    spine01:    "{{ lookup('template', 'templates/volumes/spine01.xml')   | from_xml }}"
+    spine02:    "{{ lookup('template', 'templates/volumes/spine02.xml')   | from_xml }}"
+    leaf01:     "{{ lookup('template', 'templates/volumes/leaf01.xml')    | from_xml }}"
+    leaf02:     "{{ lookup('template', 'templates/volumes/leaf02.xml')    | from_xml }}"
+    leaf03:     "{{ lookup('template', 'templates/volumes/leaf03.xml')    | from_xml }}"
+    leaf04:     "{{ lookup('template', 'templates/volumes/leaf04.xml')    | from_xml }}"
+  domains:
+    spine01:    "{{ lookup('template', 'templates/domains/spine01.xml') | from_xml }}"
+    spine02:    "{{ lookup('template', 'templates/domains/spine02.xml') | from_xml }}"
+    leaf01:     "{{ lookup('template', 'templates/domains/leaf01.xml')  | from_xml }}"
+    leaf02:     "{{ lookup('template', 'templates/domains/leaf02.xml')  | from_xml }}"
+    leaf03:     "{{ lookup('template', 'templates/domains/leaf03.xml')  | from_xml }}"
+    leaf04:     "{{ lookup('template', 'templates/domains/leaf04.xml')  | from_xml }}"

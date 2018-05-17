@@ -1,0 +1,14 @@
+- name: "domain: Generate configuration file for [{{jxml.value.domain.name}}]"
+  copy:
+    content: "{{ jxml.value | to_xml }}"
+    dest: "{{ darkbulb_topology.config.path }}/domains/{{ jxml.value.domain.name }}"
+    owner: "{{ darkbulb_topology.config.user }}"
+    group: "{{ darkbulb_topology.config.group }}"
+#    validate: /usr/bin/virt-xml-validate %s domain
+
+- name: "domain: Create domain (instance) [{{jxml.value.domain.name}}]"
+  command:
+    virsh create \
+      "{{ darkbulb_topology.config.path }}/domains/{{ jxml.value.domain.name }}"
+  args:
+    creates: "/etc/libvirt/qemu/{{ jxml.value.domain.name }}.xml"

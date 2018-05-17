@@ -1,9 +1,9 @@
 <domain type='qemu'>
-  <name>leaf01-ios</name>
+  <name>leaf04-ios</name>
   <memory unit='MiB'>1024</memory>
   <vcpu placement='auto'>1</vcpu>
   <resource>
-    <partition>/darkbulb-ios</partition>
+    <partition>/darkbulb</partition>
   </resource>
   <os>
     <type arch='x86_64'>hvm</type>
@@ -16,37 +16,38 @@
   <devices>
     <disk type='file' device='disk'>
       <driver name='qemu' type='qcow2'/>
-      <source file='{{ darkbulb_topology_pool.path }}/leaf01-ios.img'/>
+      <source file='/var/lib/libvirt/images/leaf04-ios.img'/>
       <target dev='hda' bus='ide'/>
     </disk>
     <interface type='network'>
-      <source network="{{ darkbulb_topology_network.name }}"/>
+      <source network="darkbulb"/>
+      <mac address='52:54:00:b3:02:40'/>
       <model type='e1000'/>
     </interface>
     <interface type='udp'>
-      <source address='127.0.0.1' port='11001'>
-        <local address='127.0.0.1' port='21001'/>
+      <source address='127.0.0.1' port='11004'>
+        <local address='127.0.0.1' port='24001'/>
       </source>
       <target dev='gig01'/>
       <model type='e1000'/>
     </interface>
     <interface type='udp'>
-      <source address='127.0.0.1' port='12001'>
-        <local address='127.0.0.1' port='21002'/>
+      <source address='127.0.0.1' port='12004'>
+        <local address='127.0.0.1' port='24002'/>
       </source>
       <target dev='gig02'/>
       <model type='e1000'/>
     </interface>
     <interface type='udp'>
-      <source address='127.0.0.1' port='22003'>
-        <local address='127.0.0.1' port='21003'/>
+      <source address='127.0.0.1' port='23003'>
+        <local address='127.0.0.1' port='24003'/>
       </source>
       <target dev='gig03'/>
       <model type='e1000'/>
     </interface>
     <interface type='udp'>
-      <source address='127.0.0.1' port='31001'>
-        <local address='127.0.0.1' port='21004'/>
+      <source address='127.0.0.1' port='32002'>
+        <local address='127.0.0.1' port='24004'/>
       </source>
       <target dev='gig04'/>
       <model type='e1000'/>
