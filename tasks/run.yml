@@ -1,1 +1,10 @@
-- include_tasks: create.yml
+- name: "Load variables"
+  include_tasks:  "load.yml"
+
+- name: "present"
+  include_tasks: create.yml
+  when: darkbulb_topology_state == 'present'
+
+- name: "absent"
+  include_tasks: create.yml
+  when: darkbulb_topology_state == 'absent'

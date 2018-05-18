@@ -1,4 +1,25 @@
 __domain_vcpu:
+  asa:
+    $:            '2'
+    '@placement': auto
+  eos:
+    $:            '2'
+    '@placement': auto
   ios:
+    $:            '1'
+    '@placement': auto
+  iosxr:
+    $:            '2'
+    '@placement': auto
+  junos:
+    $:            '2'
+    '@placement': auto
+  nxos:
+    $:            '2'
+    '@placement': auto
+  ovs:
+    $:            '1'
+    '@placement': auto
+  vyos:
     $:            '1'
     '@placement': auto

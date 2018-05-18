@@ -1,16 +1,16 @@
-- name: "network: Define network"
+- name: "create.network: Define network [{{ darkbulb_topology.network.network.name }}]"
   virt_net:
     name:       "{{ darkbulb_topology.network.network.name }}"
     xml:        "{{ darkbulb_topology.network | to_xml }}"
     command:    "define"
 
-- name: "network: Create network"
+- name: "create.network: Ensure present network [{{ darkbulb_topology.network.network.name }}]"
   virt_net:
     name:       "{{ darkbulb_topology.network.network.name }}"
     xml:        "{{ darkbulb_topology.network | to_xml }}"
     state:      "present"
 
-- name: "network: Activate network"
+- name: "create.network: Ensure active network [{{ darkbulb_topology.network.network.name }}]"
   virt_net:
     name:       "{{ darkbulb_topology.network.network.name }}"
     xml:        "{{ darkbulb_topology.network | to_xml }}"

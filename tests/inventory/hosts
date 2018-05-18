@@ -1,14 +1,14 @@
 [all:children]
 darkbulb
-domain
+darkbulb_topology
 
 [darkbulb:children]
 tag_darkbulb
-domain
 
 [tag_darkbulb]
+localhost
 
-[domain]
+[darkbulb_topology]
 spine01
 spine02
 leaf01

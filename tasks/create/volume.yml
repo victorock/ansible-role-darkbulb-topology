@@ -1,4 +1,4 @@
-- name: "volume: Generate configuration file"
+- name: "create.volume: Generate configuration for volume [{{ darkbulb_topology.storagevol.volume.name }}]"
   copy:
     content:    "{{ darkbulb_topology.storagevol | to_xml }}"
     dest:       "{{ darkbulb_topology.config.path }}/pools/{{ darkbulb_topology.storagevol.volume.name }}"
@@ -6,7 +6,7 @@
     group:      "{{ darkbulb_topology.config.group }}"
     validate: /usr/bin/virt-xml-validate %s storagevol
 
-- name: "volume: Create volume"
+- name: "volume: Create volume [{{ darkbulb_topology.storagevol.volume.name }}]"
   command:
     virsh vol-create \
     --file      "{{ darkbulb_topology.config.path }}/pools/{{ darkbulb_topology.storagevol.volume.name }}" \

@@ -1,5 +1,40 @@
 __domain_device_console:
+  asa:
+    '@type':      pty
+    target:
+        '@port':  '0'
+        '@type':  serial
+  eos:
+    '@type':      pty
+    target:
+        '@port':  '0'
+        '@type':  serial
   ios:
+    '@type':      pty
+    target:
+        '@port':  '0'
+        '@type':  serial
+  iosxr:
+    '@type':      pty
+    target:
+        '@port':  '0'
+        '@type':  serial
+  junos:
+    '@type':      pty
+    target:
+        '@port':  '0'
+        '@type':  serial
+  nxos:
+    '@type':      pty
+    target:
+        '@port':  '0'
+        '@type':  serial
+  ovs:
+    '@type':      pty
+    target:
+        '@port':  '0'
+        '@type':  serial
+  vyos:
     '@type':      pty
     target:
         '@port':  '0'

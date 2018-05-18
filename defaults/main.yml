@@ -1,11 +1,12 @@
+darkbulb_topology_state:        "present"
 darkbulb_topology_domain_image: "vios_l2-adventerprisek9-m.03.2017.qcow2"
 
 darkbulb_topology:
   config:
-    user:       "{{ darkbulb_user             | default('darkbulb') }}"
-    group:      "{{ darkbulb_user             | default('darkbulb') }}"
-    path:       "{{ darkbulb_homedir          | default('/home/darkbulb') }}/config/"
-  compute:      "{{ darkbulb_topology_compute[ansible_network_os] }}"
-  network:      "{{ darkbulb_topology_network[ansible_network_os] }}"
-  storagepool:  "{{ darkbulb_topology_storagepool[ansible_network_os] }}"
-  storagevol:   "{{ darkbulb_topology_storagevol[ansible_network_os] }}"
+    user:       "{{ darkbulb_user                                     | default('darkbulb') }}"
+    group:      "{{ darkbulb_group                                    | default('darkbulb') }}"
+    path:       "{{ darkbulb_homedir                                  | default('/home/darkbulb') }}/config/"
+  compute:      "{{ darkbulb_topology_compute[ansible_network_os]     | default({}) }}"
+  network:      "{{ darkbulb_topology_network[ansible_network_os]     | default({}) }}"
+  storagepool:  "{{ darkbulb_topology_storagepool[ansible_network_os] | default({}) }}"
+  storagevol:   "{{ darkbulb_topology_storagevol[ansible_network_os]  | default({}) }}"

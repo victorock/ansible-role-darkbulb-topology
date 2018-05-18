@@ -1,5 +1,5 @@
 - name: "Darkbulb Topology"
-  hosts: darkbulb:&domain
+  hosts: darkbulb_topology
   gather_facts: no
   become: yes
 
@@ -10,4 +10,6 @@
 
     - include_role:
         name: test
-        tasks_from: "create.yml"
+        tasks_from: run
+      vars:
+        darkbulb_topology_state: 'present'

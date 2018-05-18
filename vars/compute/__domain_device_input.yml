@@ -1,0 +1,49 @@
+__domain_device_input:
+  asa:
+    - "@type":        "mouse"
+      "@bus":         "ps2"
+
+    - "@type":        "keyboard"
+      "@bus":         "ps2"
+  eos:
+    - "@type":        "mouse"
+      "@bus":         "ps2"
+
+    - "@type":        "keyboard"
+      "@bus":         "ps2"
+  ios:
+    - "@type":        "mouse"
+      "@bus":         "ps2"
+
+    - "@type":        "keyboard"
+      "@bus":         "ps2"
+  iosxr:
+    - "@type":        "mouse"
+      "@bus":         "ps2"
+
+    - "@type":        "keyboard"
+      "@bus":         "ps2"
+  junos:
+    - "@type":        "mouse"
+      "@bus":         "ps2"
+
+    - "@type":        "keyboard"
+      "@bus":         "ps2"
+  nxos:
+    - "@type":        "mouse"
+      "@bus":         "ps2"
+
+    - "@type":        "keyboard"
+      "@bus":         "ps2"
+  ovs:
+    - "@type":        "mouse"
+      "@bus":         "ps2"
+
+    - "@type":        "keyboard"
+      "@bus":         "ps2"
+  vyos:
+    - "@type":        "mouse"
+      "@bus":         "ps2"
+
+    - "@type":        "keyboard"
+      "@bus":         "ps2"

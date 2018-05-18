@@ -1,15 +1,19 @@
-- name: "Storage variables"
+- name: "load: Storage variables"
   include_vars:
     dir: "vars/storage"
 
-- name: "Network variables"
+- name: "load: Network variables"
   include_vars:
     dir: "vars/network"
 
-- name: "Compute variables"
+- name: "load: Compute variables"
   include_vars:
     dir: "vars/compute"
 
-- name: "Topology variable"
+- name: "load: Topology variable"
   include_vars:
     file: "vars/__darkbulb_topology.yml"
+
+- name: "load: Set darkbulb_topology"
+  set_fact:
+    darkbulb_topology: "{{ __darkbulb_topology  | combine( darkbulb_topology, recursive=True ) }}"

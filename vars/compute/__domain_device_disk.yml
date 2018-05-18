@@ -1,4 +1,26 @@
 __domain_device_disk:
+  asa:
+    '@device':    disk
+    '@type':      file
+    driver:
+      '@name':  qemu
+      '@type':  qcow2
+    source:
+      '@file':  "/var/lib/libvirt/images/{{ inventory_hostname }}.img"
+    target:
+      '@bus':   sata
+      '@dev':   vda
+  eos:
+    '@device':    disk
+    '@type':      file
+    driver:
+      '@name':  qemu
+      '@type':  qcow2
+    source:
+      '@file':  "/var/lib/libvirt/images/{{ inventory_hostname }}.img"
+    target:
+      '@bus':   sata
+      '@dev':   vda
   ios:
     '@device':    disk
     '@type':      file
@@ -10,3 +32,58 @@ __domain_device_disk:
     target:
       '@bus':   ide
       '@dev':   hda
+  iosxr:
+    '@device':    disk
+    '@type':      file
+    driver:
+      '@name':  qemu
+      '@type':  qcow2
+    source:
+      '@file':  "/var/lib/libvirt/images/{{ inventory_hostname }}.img"
+    target:
+      '@bus':   sata
+      '@dev':   vda
+  junos:
+    '@device':    disk
+    '@type':      file
+    driver:
+      '@name':  qemu
+      '@type':  qcow2
+    source:
+      '@file':  "/var/lib/libvirt/images/{{ inventory_hostname }}.img"
+    target:
+      '@bus':   sata
+      '@dev':   vda
+  nxos:
+    '@device':    disk
+    '@type':      file
+    driver:
+      '@name':  qemu
+      '@type':  qcow2
+    source:
+      '@file':  "/var/lib/libvirt/images/{{ inventory_hostname }}.img"
+    target:
+      '@bus':   sata
+      '@dev':   vda
+  ovs:
+    '@device':    disk
+    '@type':      file
+    driver:
+      '@name':  qemu
+      '@type':  qcow2
+    source:
+      '@file':  "/var/lib/libvirt/images/{{ inventory_hostname }}.img"
+    target:
+      '@bus':   sata
+      '@dev':   vda
+  vyos:
+    '@device':    disk
+    '@type':      file
+    driver:
+      '@name':  qemu
+      '@type':  qcow2
+    source:
+      '@file':  "/var/lib/libvirt/images/{{ inventory_hostname }}.img"
+    target:
+      '@bus':   sata
+      '@dev':   vda

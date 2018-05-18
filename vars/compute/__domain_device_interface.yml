@@ -1,5 +1,47 @@
 __domain_device_interface:
+  asa:
+    -   '@type':      network
+        model:
+          '@type':    e1000
+        source:
+          '@network': default
+  eos:
+    -   '@type':      network
+        model:
+          '@type':    e1000
+        source:
+          '@network': default
   ios:
+    -   '@type':      network
+        model:
+          '@type':    e1000
+        source:
+          '@network': default
+  iosxr:
+    -   '@type':      network
+        model:
+          '@type':    e1000
+        source:
+          '@network': default
+  junos:
+    -   '@type':      network
+        model:
+          '@type':    e1000
+        source:
+          '@network': default
+  nxos:
+    -   '@type':      network
+        model:
+          '@type':    e1000
+        source:
+          '@network': default
+  ovs:
+    -   '@type':      network
+        model:
+          '@type':    e1000
+        source:
+          '@network': default
+  vyos:
     -   '@type':      network
         model:
           '@type':    e1000

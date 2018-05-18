@@ -1,9 +1,9 @@
-- name: "network: Ensure state of pool"
+- name: "destroy.network: Ensure inactive pool [{{ darkbulb_topology.storagepool.pool.name }}]"
   virt_pool:
     name:     "{{ darkbulb_topology.storagepool.pool.name }}"
     state:    "inactive"
 
-- name: "network: Ensure state of pool"
+- name: "destroy.network: Ensure absent pool [{{ darkbulb_topology.storagepool.pool.name }}]"
   virt_pool:
     name:     "{{ darkbulb_topology.storagepool.pool.name }}"
     state:    "absent"

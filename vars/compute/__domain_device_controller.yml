@@ -1,0 +1,185 @@
+__domain_device_controller:
+  asa:
+    - "@types":       "pci"
+      "@index":       "0"
+      "@model":       "pci-root"
+
+    - "@types":       "usb"
+      "@index":       "0"
+      "@model":       "piix3-uhci"
+      address:
+        "@type":      "pci"
+        "@domain":    "0x0000"
+        "@bus":       "0x00"
+        "@slot":      "0x01"
+        "@function":  "0x2"
+
+    - "@type":        "sata"
+      "@index":       "0"
+      address:
+        "@type":      "pci"
+        "@domain":    "0x0000"
+        "@bus":       "0x00"
+        "@slot":      "0x03"
+        "@function":  "0x0"
+  eos:
+    - "@types":       "pci"
+      "@index":       "0"
+      "@model":       "pci-root"
+
+    - "@types":       "usb"
+      "@index":       "0"
+      "@model":       "piix3-uhci"
+      address:
+        "@type":      "pci"
+        "@domain":    "0x0000"
+        "@bus":       "0x00"
+        "@slot":      "0x01"
+        "@function":  "0x2"
+
+    - "@type":        "sata"
+      "@index":       "0"
+      address:
+        "@type":      "pci"
+        "@domain":    "0x0000"
+        "@bus":       "0x00"
+        "@slot":      "0x03"
+        "@function":  "0x0"
+  ios:
+    - "@types":       "pci"
+      "@index":       "0"
+      "@model":       "pci-root"
+
+    - "@types":       "usb"
+      "@index":       "0"
+      "@model":       "piix3-uhci"
+      address:
+        "@type":      "pci"
+        "@domain":    "0x0000"
+        "@bus":       "0x00"
+        "@slot":      "0x01"
+        "@function":  "0x2"
+
+    - "@type":        "sata"
+      "@index":       "0"
+      address:
+        "@type":      "pci"
+        "@domain":    "0x0000"
+        "@bus":       "0x00"
+        "@slot":      "0x03"
+        "@function":  "0x0"
+  iosxr:
+    - "@types":       "pci"
+      "@index":       "0"
+      "@model":       "pci-root"
+
+    - "@types":       "usb"
+      "@index":       "0"
+      "@model":       "piix3-uhci"
+      address:
+        "@type":      "pci"
+        "@domain":    "0x0000"
+        "@bus":       "0x00"
+        "@slot":      "0x01"
+        "@function":  "0x2"
+
+    - "@type":        "sata"
+      "@index":       "0"
+      address:
+        "@type":      "pci"
+        "@domain":    "0x0000"
+        "@bus":       "0x00"
+        "@slot":      "0x03"
+        "@function":  "0x0"
+  junos:
+    - "@types":       "pci"
+      "@index":       "0"
+      "@model":       "pci-root"
+
+    - "@types":       "usb"
+      "@index":       "0"
+      "@model":       "piix3-uhci"
+      address:
+        "@type":      "pci"
+        "@domain":    "0x0000"
+        "@bus":       "0x00"
+        "@slot":      "0x01"
+        "@function":  "0x2"
+
+    - "@type":        "sata"
+      "@index":       "0"
+      address:
+        "@type":      "pci"
+        "@domain":    "0x0000"
+        "@bus":       "0x00"
+        "@slot":      "0x03"
+        "@function":  "0x0"
+  nxos:
+    - "@types":       "pci"
+      "@index":       "0"
+      "@model":       "pci-root"
+
+    - "@types":       "usb"
+      "@index":       "0"
+      "@model":       "piix3-uhci"
+      address:
+        "@type":      "pci"
+        "@domain":    "0x0000"
+        "@bus":       "0x00"
+        "@slot":      "0x01"
+        "@function":  "0x2"
+
+    - "@type":        "sata"
+      "@index":       "0"
+      address:
+        "@type":      "pci"
+        "@domain":    "0x0000"
+        "@bus":       "0x00"
+        "@slot":      "0x03"
+        "@function":  "0x0"
+  ovs:
+    - "@types":       "pci"
+      "@index":       "0"
+      "@model":       "pci-root"
+
+    - "@types":       "usb"
+      "@index":       "0"
+      "@model":       "piix3-uhci"
+      address:
+        "@type":      "pci"
+        "@domain":    "0x0000"
+        "@bus":       "0x00"
+        "@slot":      "0x01"
+        "@function":  "0x2"
+
+    - "@type":        "sata"
+      "@index":       "0"
+      address:
+        "@type":      "pci"
+        "@domain":    "0x0000"
+        "@bus":       "0x00"
+        "@slot":      "0x03"
+        "@function":  "0x0"
+  vyos:
+    - "@types":       "pci"
+      "@index":       "0"
+      "@model":       "pci-root"
+
+    - "@types":       "usb"
+      "@index":       "0"
+      "@model":       "piix3-uhci"
+      address:
+        "@type":      "pci"
+        "@domain":    "0x0000"
+        "@bus":       "0x00"
+        "@slot":      "0x01"
+        "@function":  "0x2"
+
+    - "@type":        "sata"
+      "@index":       "0"
+      address:
+        "@type":      "pci"
+        "@domain":    "0x0000"
+        "@bus":       "0x00"
+        "@slot":      "0x03"
+        "@function":  "0x0"

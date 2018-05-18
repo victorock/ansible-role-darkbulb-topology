@@ -1,16 +1,16 @@
-- name: "pool: Define pool"
+- name: "create.pool: Define pool [{{ darkbulb_topology.storagepool.pool.name }}]"
   virt_pool:
     name:       "{{ darkbulb_topology.storagepool.pool.name }}"
     xml:        "{{ darkbulb_topology.storagepool | to_xml }}"
     command:    "define"
 
-- name: "pool: Define pool"
+- name: "create.pool: Ensure active pool [{{ darkbulb_topology.storagepool.pool.name }}]"
   virt_pool:
     name:       "{{ darkbulb_topology.storagepool.pool.name }}"
     xml:        "{{ darkbulb_topology.storagepool | to_xml }}"
     state:      "active"
 
-- name: "pool: Ensure state of pool"
+- name: "create.pool: Ensure present pool [{{ darkbulb_topology.storagepool.pool.name }}]"
   virt_pool:
     name:       "{{ darkbulb_topology.storagepool.pool.name }}"
     xml:        "{{ darkbulb_topology.storagepool | to_xml }}"
