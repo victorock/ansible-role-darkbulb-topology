@@ -1,12 +1,12 @@
-- name: "domain: Define domain [{{jxml.value.domain.name}}]"
+- name: "domain: Define domain"
   virt:
-    name:       "{{ jxml.value.domain.name }}"
-    xml:        "{{ jxml.value | to_xml }}"
+    name:       "{{ darkbulb_topology.compute.domain.name }}"
+    xml:        "{{ darkbulb_topology.compute | to_xml }}"
     command:    "define"
 
-- name: "domain: Ensure state of domain [{{jxml.value.domain.name}}]"
+- name: "domain: Ensure state of domain"
   virt:
-    name:       "{{ jxml.value.domain.name }}"
-    xml:        "{{ jxml.value | to_xml }}"
+    name:       "{{ darkbulb_topology.compute.domain.name }}"
+    xml:        "{{ darkbulb_topology.compute | to_xml }}"
     state:      "running"
     autostart:  yes

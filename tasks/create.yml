@@ -1,6 +1,9 @@
+- name: "Load variables"
+  include_tasks:  "load.yml"
+
 - name: "Set darkbulb_topology"
   set_fact:
-    darkbulb_topology: "{{ __darkbulb_topology | combine( darkbulb_topology, recursive=True ) }}"
+    darkbulb_topology: "{{ __darkbulb_topology  | combine( darkbulb_topology, recursive=True ) }}"
 
 - name: "create: Ensure state of configuration directories"
   file:
@@ -12,30 +15,18 @@
   loop_control:
     loop_var:     config_dir
 
-- name: "create: Process Networks"
+- name: "create: Process Network"
   include_tasks:  "create/network.yml"
-  with_dict:      "{{ darkbulb_topology.networks }}"
-  when:           darkbulb_topology.networks is defined
-  loop_control:
-    loop_var:     jxml
+  when:           darkbulb_topology.network is defined
 
-- name: "create: Process Storage Pools"
+- name: "create: Process Storage Pool"
   include_tasks:  "create/pool.yml"
-  with_dict:      "{{ darkbulb_topology.pools }}"
-  when:           darkbulb_topology.pools is defined
-  loop_control:
-    loop_var:     jxml
+  when:           darkbulb_topology.storagepool is defined
 
-- name: "create: Process Storage Volumes"
+- name: "create: Process Storage Volume"
   include_tasks:  "create/volume.yml"
-  with_dict:      "{{ darkbulb_topology.volumes }}"
-  when:           darkbulb_topology.volumes is defined
-  loop_control:
-    loop_var:     jxml
+  when:           darkbulb_topology.storagevol is defined
 
-- name: "create: Process Domains (Instances)"
+- name: "create: Process Compute Domain"
   include_tasks:  "create/domain.yml"
-  with_dict:      "{{ darkbulb_topology.domains }}"
-  when:           darkbulb_topology.domains is defined
-  loop_control:
-    loop_var:     jxml
+  when:           darkbulb_topology.compute is defined

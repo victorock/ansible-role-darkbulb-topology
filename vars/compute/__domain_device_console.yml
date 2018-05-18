@@ -1,0 +1,6 @@
+__domain_device_console:
+  ios:
+    '@type':      pty
+    target:
+        '@port':  '0'
+        '@type':  serial

@@ -1,3 +1,6 @@
+- name: "Load variables"
+  include_tasks:  "load.yml"
+
 - name: "Set darkbulb_topology"
   set_fact:
     darkbulb_topology: "{{ __darkbulb_topology | combine( darkbulb_topology, recursive=True ) }}"
@@ -12,33 +15,21 @@
   loop_control:
     loop_var:     config_dir
 
-- name: "destroy: Process Domains (Instances)"
+- name: "destroy: Process Compute Domain"
   include_tasks:  "destroy/domain.yml"
-  with_dict:      "{{ darkbulb_topology.domains }}"
-  when:           darkbulb_topology.domains is defined
-  loop_control:
-    loop_var:     jxml
+  when:           darkbulb_topology.domain is defined
 
-- name: "destroy: Process Storage Volumes"
+- name: "destroy: Process Storage Volume"
   include_tasks:  "destroy/volume.yml"
-  with_dict:      "{{ darkbulb_topology.volumes }}"
-  when:           darkbulb_topology.volumes is defined
-  loop_control:
-    loop_var:     jxml
+  when:           darkbulb_topology.storagevol is defined
 
-- name: "destroy: Process Storage Pools"
+- name: "destroy: Process Storage Pool"
   include_tasks:  "destroy/pool.yml"
-  with_dict:      "{{ darkbulb_topology.pools }}"
-  when:           darkbulb_topology.pools is defined
-  loop_control:
-    loop_var:     jxml
+  when:           darkbulb_topology.storagepool is defined
 
-- name: "destroy: Process Networks"
+- name: "destroy: Process Network"
   include_tasks:  "destroy/network.yml"
-  with_dict:      "{{ darkbulb_topology.networks }}"
-  when:           darkbulb_topology.networks is defined
-  loop_control:
-    loop_var:     jxml
+  when:           darkbulb_topology.network is defined
 
 - name: "destroy: Delete configuration directories"
   file:

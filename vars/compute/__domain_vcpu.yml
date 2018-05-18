@@ -1,0 +1,4 @@
+__domain_vcpu:
+  ios:
+    $:            '1'
+    '@placement': auto

@@ -1,0 +1,4 @@
+__domain_memory:
+  ios:
+    $:        '1024'
+    '@unit':  MiB

@@ -1,0 +1,15 @@
+- name: "Storage variables"
+  include_vars:
+    dir: "vars/storage"
+
+- name: "Network variables"
+  include_vars:
+    dir: "vars/network"
+
+- name: "Compute variables"
+  include_vars:
+    dir: "vars/compute"
+
+- name: "Topology variable"
+  include_vars:
+    file: "vars/__darkbulb_topology.yml"

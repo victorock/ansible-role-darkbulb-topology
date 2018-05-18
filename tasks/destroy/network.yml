@@ -1,9 +1,9 @@
-- name: "network: Inactivate network [{{jxml.value.network.name}}]"
+- name: "network: Inactivate network"
   virt_net:
-    name:       "{{ jxml.value.network.name }}"
-    command:      "destroy"
+    name:       "{{ darkbulb_topology.network.network.name }}"
+    command:    "destroy"
 
-- name: "network: Ensure state of network [{{jxml.value.network.name}}]"
+- name: "network: Ensure state of network"
   virt_net:
-    name:       "{{ jxml.value.network.name }}"
+    name:       "{{ darkbulb_topology.network.network.name }}"
     command:    "undefine"

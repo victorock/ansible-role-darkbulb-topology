@@ -1,0 +1,7 @@
+__domain_os:
+  ios:
+    boot:
+        '@dev':   hd
+    type:
+        $:        hvm
+        '@arch':  x86_64

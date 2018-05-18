@@ -1,9 +1,9 @@
-- name: "network: Ensure state of pool [{{jxml.value.pool.name}}]"
+- name: "network: Ensure state of pool"
   virt_pool:
-    name:     "{{ jxml.value.pool.name }}"
+    name:     "{{ darkbulb_topology.storagepool.pool.name }}"
     state:    "inactive"
 
-- name: "network: Ensure state of pool [{{jxml.value.pool.name}}]"
+- name: "network: Ensure state of pool"
   virt_pool:
-    name:     "{{ jxml.value.pool.name }}"
+    name:     "{{ darkbulb_topology.storagepool.pool.name }}"
     state:    "absent"

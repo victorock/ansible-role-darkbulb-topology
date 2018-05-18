@@ -1,0 +1,17 @@
+__vol:
+  ios:
+    volume:
+      allocation:
+          $:          '0'
+          '@unit':    GiB
+      backingStore:
+          format:
+            '@type':  qcow2
+          path:       "/var/lib/libvirt/images/{{ darkbulb_topology_domain_image }}"
+      capacity:
+          $: '2'
+          '@unit':    GiB
+      name:           "{{ inventory_hostname }}.img"
+      target:
+          format:
+            '@type':  qcow2

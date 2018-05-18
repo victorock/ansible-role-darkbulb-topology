@@ -1,0 +1,16 @@
+__domain:
+  ios:
+    domain:
+      '@type':      qemu
+      cpu:
+        '@mode':    host-model
+      devices:      "{{ __domain_devices[ansible_network_os] }}"
+      memory:       "{{ __domain_memory[ansible_network_os] }}"
+      name:         ios
+      on_crash:     destroy
+      on_poweroff:  destroy
+      on_reboot:    restart
+      os:           "{{ __domain_os[ansible_network_os] }}"
+      resource:
+          partition: /ios
+      vcpu:         "{{ __domain_vcpu[ansible_network_os] }}"

@@ -1,18 +1,18 @@
-- name: "pool: Define pool [{{jxml.value.pool.name}}]"
+- name: "pool: Define pool"
   virt_pool:
-    name:       "{{ jxml.value.pool.name }}"
-    xml:        "{{ jxml.value | to_xml }}"
+    name:       "{{ darkbulb_topology.storagepool.pool.name }}"
+    xml:        "{{ darkbulb_topology.storagepool | to_xml }}"
     command:    "define"
 
-- name: "pool: Define pool [{{jxml.value.pool.name}}]"
+- name: "pool: Define pool"
   virt_pool:
-    name:       "{{ jxml.value.pool.name }}"
-    xml:        "{{ jxml.value | to_xml }}"
+    name:       "{{ darkbulb_topology.storagepool.pool.name }}"
+    xml:        "{{ darkbulb_topology.storagepool | to_xml }}"
     state:      "active"
 
-- name: "pool: Ensure state of pool [{{jxml.value.pool.name}}]"
+- name: "pool: Ensure state of pool"
   virt_pool:
-    name:       "{{ jxml.value.pool.name }}"
-    xml:        "{{ jxml.value | to_xml }}"
+    name:       "{{ darkbulb_topology.storagepool.pool.name }}"
+    xml:        "{{ darkbulb_topology.storagepool | to_xml }}"
     state:      "present"
     autostart:  yes

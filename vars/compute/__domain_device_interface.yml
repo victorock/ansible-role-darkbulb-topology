@@ -1,0 +1,7 @@
+__domain_device_interface:
+  ios:
+    -   '@type':      network
+        model:
+          '@type':    e1000
+        source:
+          '@network': default

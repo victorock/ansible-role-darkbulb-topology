@@ -1,0 +1,5 @@
+__domain_device_serial:
+  ios:
+    '@type':      pty
+    target:
+        '@port':  '0'

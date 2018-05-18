@@ -1,7 +1,17 @@
 [all:children]
 darkbulb
+domain
 
 [darkbulb:children]
 tag_darkbulb
+domain
 
 [tag_darkbulb]
+
+[domain]
+spine01
+spine02
+leaf01
+leaf02
+leaf03
+leaf04

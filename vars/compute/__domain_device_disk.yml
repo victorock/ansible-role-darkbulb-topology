@@ -1,0 +1,12 @@
+__domain_device_disk:
+  ios:
+    '@device':    disk
+    '@type':      file
+    driver:
+      '@name':  qemu
+      '@type':  qcow2
+    source:
+      '@file':  "/var/lib/libvirt/images/{{ inventory_hostname }}.img"
+    target:
+      '@bus':   ide
+      '@dev':   hda
