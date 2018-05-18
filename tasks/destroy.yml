@@ -1,0 +1,46 @@
+- name: "Set darkbulb_topology"
+  set_fact:
+    darkbulb_topology: "{{ __darkbulb_topology | combine( darkbulb_topology, recursive=True ) }}"
+
+- name: "destroy: Ensure state of configuration directories"
+  file:
+    path:         "{{ darkbulb_topology.config.path }}/{{ config_dir }}"
+    owner:        "{{ darkbulb_topology.config.user }}"
+    group:        "{{ darkbulb_topology.config.group }}"
+    state:        directory
+  loop:           "{{ darkbulb_topology.config.dirs }}"
+  loop_control:
+    loop_var:     config_dir
+
+- name: "destroy: Process Domains (Instances)"
+  include_tasks:  "destroy/domain.yml"
+  with_dict:      "{{ darkbulb_topology.domains }}"
+  when:           darkbulb_topology.domains is defined
+  loop_control:
+    loop_var:     jxml
+
+- name: "destroy: Process Storage Volumes"
+  include_tasks:  "destroy/volume.yml"
+  with_dict:      "{{ darkbulb_topology.volumes }}"
+  when:           darkbulb_topology.volumes is defined
+  loop_control:
+    loop_var:     jxml
+
+- name: "destroy: Process Storage Pools"
+  include_tasks:  "destroy/pool.yml"
+  with_dict:      "{{ darkbulb_topology.pools }}"
+  when:           darkbulb_topology.pools is defined
+  loop_control:
+    loop_var:     jxml
+
+- name: "destroy: Process Networks"
+  include_tasks:  "destroy/network.yml"
+  with_dict:      "{{ darkbulb_topology.networks }}"
+  when:           darkbulb_topology.networks is defined
+  loop_control:
+    loop_var:     jxml
+
+- name: "destroy: Delete configuration directories"
+  file:
+    path:         "{{ darkbulb_topology.config.path }}"
+    state:        absent

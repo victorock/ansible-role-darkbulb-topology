@@ -1,0 +1,7 @@
+[all:children]
+darkbulb
+
+[darkbulb:children]
+tag_darkbulb
+
+[tag_darkbulb]

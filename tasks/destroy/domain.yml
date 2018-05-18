@@ -1,0 +1,11 @@
+- name: "domain: Ensure state of domain [{{jxml.value.domain.name}}]"
+  virt:
+    name:     "{{ jxml.value.domain.name }}"
+    xml:      "{{ jxml.value | to_xml }}"
+    command:  "destroy"
+
+- name: "domain: Ensure state of domain [{{jxml.value.domain.name}}]"
+  virt:
+    name:     "{{ jxml.value.domain.name }}"
+    xml:      "{{ jxml.value | to_xml }}"
+    command:  "undefine"
