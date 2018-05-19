@@ -1,4 +1,36 @@
 __vol:
+  asa:
+    volume:
+      allocation:
+          $:          '0'
+          '@unit':    GiB
+      backingStore:
+          format:
+            '@type':  qcow2
+          path:       "/var/lib/libvirt/images/{{ darkbulb_topology_domain_image }}"
+      capacity:
+          $: '4'
+          '@unit':    GiB
+      name:           "{{ inventory_hostname }}.img"
+      target:
+          format:
+            '@type':  qcow2
+  eos:
+    volume:
+      allocation:
+          $:          '0'
+          '@unit':    GiB
+      backingStore:
+          format:
+            '@type':  qcow2
+          path:       "/var/lib/libvirt/images/{{ darkbulb_topology_domain_image }}"
+      capacity:
+          $: '4'
+          '@unit':    GiB
+      name:           "{{ inventory_hostname }}.img"
+      target:
+          format:
+            '@type':  qcow2
   ios:
     volume:
       allocation:
@@ -10,6 +42,86 @@ __vol:
           path:       "/var/lib/libvirt/images/{{ darkbulb_topology_domain_image }}"
       capacity:
           $: '2'
+          '@unit':    GiB
+      name:           "{{ inventory_hostname }}.img"
+      target:
+          format:
+            '@type':  qcow2
+  iosxr:
+    volume:
+      allocation:
+          $:          '0'
+          '@unit':    GiB
+      backingStore:
+          format:
+            '@type':  qcow2
+          path:       "/var/lib/libvirt/images/{{ darkbulb_topology_domain_image }}"
+      capacity:
+          $: '4'
+          '@unit':    GiB
+      name:           "{{ inventory_hostname }}.img"
+      target:
+          format:
+            '@type':  qcow2
+  junos:
+    volume:
+      allocation:
+          $:          '0'
+          '@unit':    GiB
+      backingStore:
+          format:
+            '@type':  qcow2
+          path:       "/var/lib/libvirt/images/{{ darkbulb_topology_domain_image }}"
+      capacity:
+          $: '4'
+          '@unit':    GiB
+      name:           "{{ inventory_hostname }}.img"
+      target:
+          format:
+            '@type':  qcow2
+  nxos:
+    volume:
+      allocation:
+          $:          '0'
+          '@unit':    GiB
+      backingStore:
+          format:
+            '@type':  qcow2
+          path:       "/var/lib/libvirt/images/{{ darkbulb_topology_domain_image }}"
+      capacity:
+          $: '4'
+          '@unit':    GiB
+      name:           "{{ inventory_hostname }}.img"
+      target:
+          format:
+            '@type':  qcow2
+  ovs:
+    volume:
+      allocation:
+          $:          '0'
+          '@unit':    GiB
+      backingStore:
+          format:
+            '@type':  qcow2
+          path:       "/var/lib/libvirt/images/{{ darkbulb_topology_domain_image }}"
+      capacity:
+          $: '4'
+          '@unit':    GiB
+      name:           "{{ inventory_hostname }}.img"
+      target:
+          format:
+            '@type':  qcow2
+  vyos:
+    volume:
+      allocation:
+          $:          '0'
+          '@unit':    GiB
+      backingStore:
+          format:
+            '@type':  qcow2
+          path:       "/var/lib/libvirt/images/{{ darkbulb_topology_domain_image }}"
+      capacity:
+          $: '4'
           '@unit':    GiB
       name:           "{{ inventory_hostname }}.img"
       target:

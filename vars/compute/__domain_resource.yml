@@ -1,25 +1,17 @@
 __domain_resource:
   asa:
-    resource:
-        partition: "/asa"
+    partition: "/asa"
   eos:
-    resource:
-        partition: "/eos"
+    partition: "/eos"
   ios:
-    resource:
-        partition: "/ios"
+    partition: "/ios"
   iosxr:
-    resource:
-        partition: "/iosxr"
+    partition: "/iosxr"
   junos:
-    resource:
-        partition: "/junos"
+    partition: "/junos"
   nxos:
-    resource:
-        partition: "/nxos"
+    partition: "/nxos"
   ovs:
-    resource:
-        partition: "/ovs"
+    partition: "/ovs"
   vyos:
-    resource:
-        partition: "/vyos"
+    partition: "/vyos"

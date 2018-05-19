@@ -2,14 +2,18 @@
   hosts: darkbulb_topology
   gather_facts: no
   become: yes
+  # Hack to avoid race-condition when running multi-node topology in a single host
+  # Avoids race-condition in libvirt when setting up common resources
+  serial:
+  - 1
+  - "100%"
 
   roles:
     - test
 
   tasks:
-
     - include_role:
         name: test
         tasks_from: run
       vars:
-        darkbulb_topology_state: 'absent'
+        darkbulb_topology_state: "absent"

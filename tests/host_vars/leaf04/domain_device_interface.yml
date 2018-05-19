@@ -1,6 +1,4 @@
 domain_device_interface:
-  ios:
-  interface:
   -   '@type':        network
       mac:
           '@address': 52:54:00:b3:02:40

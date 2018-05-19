@@ -1,6 +1,0 @@
-darkbulb_topology_compute:
-  ios:
-    domain:
-      devices:
-        interface: "{{ domain_device_interface[ansible_network_os] }}"
-        disk: "{{ domain_device_disk[ansible_network_os] }}"

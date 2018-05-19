@@ -6,5 +6,5 @@
   when: darkbulb_topology_state == 'present'
 
 - name: "absent"
-  include_tasks: create.yml
+  include_tasks: destroy.yml
   when: darkbulb_topology_state == 'absent'
