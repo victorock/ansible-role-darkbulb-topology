@@ -1,9 +1,9 @@
-- name: "destroy.network: Destroy network [{{ darkbulb_topology.network.network.name }}]"
+- name: "destroy.network: Destroy network"
   virt_net:
     name:       "{{ darkbulb_topology.network.network.name }}"
     command:    "destroy"
 
-- name: "destroy.network: Undefine network [{{ darkbulb_topology.network.network.name }}]"
+- name: "destroy.network: Undefine network"
   virt_net:
     name:       "{{ darkbulb_topology.network.network.name }}"
     command:    "undefine"

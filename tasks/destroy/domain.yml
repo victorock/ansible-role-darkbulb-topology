@@ -1,10 +1,10 @@
-- name: "destroy.domain: Destroy domain [{{ darkbulb_topology.compute.domain.name }}]"
+- name: "destroy.domain: Destroy domain"
   virt:
     name:       "{{ darkbulb_topology.compute.domain.name }}"
     xml:        "{{ darkbulb_topology.compute | to_xml }}"
     command:    "destroy"
 
-- name: "destroy.domain: Undefine domain [{{ darkbulb_topology.compute.domain.name }}]"
+- name: "destroy.domain: Undefine domain"
   virt:
     name:       "{{ darkbulb_topology.compute.domain.name }}"
     xml:        "{{ darkbulb_topology.compute | to_xml }}"

@@ -1,0 +1,6 @@
+darkbulb_topology:
+  config:       "{{ darkbulb_topology_config        }}"
+  compute:      "{{ darkbulb_topology_compute       }}"
+  network:      "{{ darkbulb_topology_network       }}"
+  storagepool:  "{{ darkbulb_topology_storagepool   }}"
+  storagevol:   "{{ darkbulb_topology_storagevol    }}"

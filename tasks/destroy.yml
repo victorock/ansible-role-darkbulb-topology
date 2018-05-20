@@ -10,19 +10,15 @@
 
 - name: "destroy: Process Compute Domain"
   include_tasks:  "destroy/domain.yml"
-  when: darkbulb_topology.compute.domain is defined
 
 - name: "destroy: Process Storage Volume"
   include_tasks:  "destroy/volume.yml"
-  when: darkbulb_topology.storagevol.volume is defined
 
 - name: "destroy: Process Storage Pool"
   include_tasks:  "destroy/pool.yml"
-  when: darkbulb_topology.storagepool.pool is defined
 
 - name: "destroy: Process Network"
   include_tasks:  "destroy/network.yml"
-  when: darkbulb_topology.network.network is defined
 
 - name: "destroy: Ensure absent configuration directories"
   file:

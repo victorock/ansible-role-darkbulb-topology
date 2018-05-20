@@ -1,0 +1,11 @@
+__config:
+  dirs:
+  -             "domains"
+  -             "volumes"
+  -             "pools"
+  -             "networks"
+  group:        "darkbulb"
+  path:         "/home/darkbulb/config/"
+  user:         "darkbulb"
+  image:        "default.img"
+  state:        "present"

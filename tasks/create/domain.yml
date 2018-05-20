@@ -1,10 +1,10 @@
-- name: "create.domain: Define domain [{{ darkbulb_topology.compute.domain.name }}]"
+- name: "create.domain: Define domain"
   virt:
     name:       "{{ darkbulb_topology.compute.domain.name }}"
     xml:        "{{ darkbulb_topology.compute | to_xml }}"
     command:    "define"
 
-- name: "create.domain: Ensure running domain [{{ darkbulb_topology.compute.domain.name }}]"
+- name: "create.domain: Ensure running domain"
   virt:
     name:       "{{ darkbulb_topology.compute.domain.name }}"
     xml:        "{{ darkbulb_topology.compute | to_xml }}"

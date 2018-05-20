@@ -1,18 +1,6 @@
-- name: "load: Storage variables"
+- name: "load: Darkbulb Topology Variables"
   include_vars:
-    dir: "vars/storage"
-
-- name: "load: Network variables"
-  include_vars:
-    dir: "vars/network"
-
-- name: "load: Compute variables"
-  include_vars:
-    dir: "vars/compute"
-
-- name: "load: Topology variable"
-  include_vars:
-    file: "vars/__darkbulb_topology.yml"
+    dir: "vars/"
 
 - name: "load: Set darkbulb_topology"
   set_fact:

@@ -7,7 +7,7 @@ __vol:
       backingStore:
           format:
             '@type':  qcow2
-          path:       "/var/lib/libvirt/images/{{ darkbulb_topology_domain_image }}"
+          path:       "/var/lib/libvirt/images/{{ darkbulb_topology.config.image }}"
       capacity:
           $: '4'
           '@unit':    GiB
@@ -23,7 +23,7 @@ __vol:
       backingStore:
           format:
             '@type':  qcow2
-          path:       "/var/lib/libvirt/images/{{ darkbulb_topology_domain_image }}"
+          path:       "/var/lib/libvirt/images/{{ darkbulb_topology.config.image }}"
       capacity:
           $: '4'
           '@unit':    GiB
@@ -39,7 +39,7 @@ __vol:
       backingStore:
           format:
             '@type':  qcow2
-          path:       "/var/lib/libvirt/images/{{ darkbulb_topology_domain_image }}"
+          path:       "/var/lib/libvirt/images/{{ darkbulb_topology.config.image }}"
       capacity:
           $: '2'
           '@unit':    GiB
@@ -55,7 +55,7 @@ __vol:
       backingStore:
           format:
             '@type':  qcow2
-          path:       "/var/lib/libvirt/images/{{ darkbulb_topology_domain_image }}"
+          path:       "/var/lib/libvirt/images/{{ darkbulb_topology.config.image }}"
       capacity:
           $: '4'
           '@unit':    GiB
@@ -71,7 +71,7 @@ __vol:
       backingStore:
           format:
             '@type':  qcow2
-          path:       "/var/lib/libvirt/images/{{ darkbulb_topology_domain_image }}"
+          path:       "/var/lib/libvirt/images/{{ darkbulb_topology.config.image }}"
       capacity:
           $: '4'
           '@unit':    GiB
@@ -87,7 +87,7 @@ __vol:
       backingStore:
           format:
             '@type':  qcow2
-          path:       "/var/lib/libvirt/images/{{ darkbulb_topology_domain_image }}"
+          path:       "/var/lib/libvirt/images/{{ darkbulb_topology.config.image }}"
       capacity:
           $: '4'
           '@unit':    GiB
@@ -103,7 +103,7 @@ __vol:
       backingStore:
           format:
             '@type':  qcow2
-          path:       "/var/lib/libvirt/images/{{ darkbulb_topology_domain_image }}"
+          path:       "/var/lib/libvirt/images/{{ darkbulb_topology.config.image }}"
       capacity:
           $: '4'
           '@unit':    GiB
@@ -119,7 +119,7 @@ __vol:
       backingStore:
           format:
             '@type':  qcow2
-          path:       "/var/lib/libvirt/images/{{ darkbulb_topology_domain_image }}"
+          path:       "/var/lib/libvirt/images/{{ darkbulb_topology.config.image }}"
       capacity:
           $: '4'
           '@unit':    GiB

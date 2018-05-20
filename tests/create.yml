@@ -16,4 +16,4 @@
         name: test
         tasks_from: run
       vars:
-        darkbulb_topology_state: "present"
+        darkbulb_topology_config_state: "present"

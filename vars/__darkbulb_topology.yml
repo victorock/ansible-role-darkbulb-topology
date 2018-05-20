@@ -1,14 +1,6 @@
 __darkbulb_topology:
-  config:
-    dirs:
-    -             "domains"
-    -             "volumes"
-    -             "pools"
-    -             "networks"
-    group:        "darkbulb"
-    path:         "/home/darkbulb/config/"
-    user:         "darkbulb"
-  compute:        "{{ __domain[ansible_network_os]                                                            }}"
-  network:        "{{ __network[(darkbulb_topology_network['network']['forward']['@mode']|default('nat'))]    }}"
-  storagepool:    "{{ __pool[(darkbulb_topology_storagepool['pool']['@type']|default('dir'))]                 }}"
-  storagevol:     "{{ __vol[ansible_network_os]                                                               }}"
+  config:       "{{ __config                                                                                }}"
+  compute:      "{{ __domain[ansible_network_os]                                                            }}"
+  network:      "{{ __network[(darkbulb_topology_network['network']['forward']['@mode']|default('nat'))]    }}"
+  storagepool:  "{{ __pool[(darkbulb_topology_storagepool['pool']['@type']|default('dir'))]                 }}"
+  storagevol:   "{{ __vol[ansible_network_os]                                                               }}"
