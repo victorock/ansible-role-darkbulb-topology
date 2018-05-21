@@ -1,7 +1,7 @@
 __pool:
   dir:
     pool:
-      '@type': dir
-      name: default
+      '@type':  'dir'
+      name:     'default'
       target:
-        path: /var/lib/libvirt/images
+        path:   '/var/lib/libvirt/images'

@@ -13,4 +13,4 @@ darkbulb_topology_network:
         range:
           '@end':       192.168.10.254
           '@start':     192.168.10.1
-    name:               darkbulb
+    name:               'darkbulb'

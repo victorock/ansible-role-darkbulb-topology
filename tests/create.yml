@@ -6,7 +6,6 @@
   # Avoids race-condition in libvirt when setting up common resources
   serial:
   - 1
-  - "100%"
 
   roles:
     - test
