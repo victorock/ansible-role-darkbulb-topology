@@ -5,3 +5,8 @@
 - name: "load: Set darkbulb_topology"
   set_fact:
     darkbulb_topology: "{{ __darkbulb_topology  | combine( darkbulb_topology, recursive=True ) }}"
+
+- name: "display all variables/facts (verbosity: 2)"
+  debug:
+    var: hostvars[inventory_hostname]
+    verbosity: 4

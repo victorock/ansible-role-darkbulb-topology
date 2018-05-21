@@ -1,10 +1,10 @@
 __domain_device_controller:
   asa:
-    - "@types":       "pci"
+    - "@type":       "pci"
       "@index":       "0"
       "@model":       "pci-root"
 
-    - "@types":       "usb"
+    - "@type":       "usb"
       "@index":       "0"
       "@model":       "piix3-uhci"
       address:
@@ -23,11 +23,11 @@ __domain_device_controller:
         "@slot":      "0x03"
         "@function":  "0x0"
   eos:
-    - "@types":       "pci"
+    - "@type":       "pci"
       "@index":       "0"
       "@model":       "pci-root"
 
-    - "@types":       "usb"
+    - "@type":       "usb"
       "@index":       "0"
       "@model":       "piix3-uhci"
       address:
@@ -46,11 +46,11 @@ __domain_device_controller:
         "@slot":      "0x03"
         "@function":  "0x0"
   ios:
-    - "@types":       "pci"
+    - "@type":       "pci"
       "@index":       "0"
       "@model":       "pci-root"
 
-    - "@types":       "usb"
+    - "@type":       "usb"
       "@index":       "0"
       "@model":       "piix3-uhci"
       address:
@@ -69,11 +69,11 @@ __domain_device_controller:
         "@slot":      "0x03"
         "@function":  "0x0"
   iosxr:
-    - "@types":       "pci"
+    - "@type":       "pci"
       "@index":       "0"
       "@model":       "pci-root"
 
-    - "@types":       "usb"
+    - "@type":       "usb"
       "@index":       "0"
       "@model":       "piix3-uhci"
       address:
@@ -92,11 +92,11 @@ __domain_device_controller:
         "@slot":      "0x03"
         "@function":  "0x0"
   junos:
-    - "@types":       "pci"
+    - "@type":       "pci"
       "@index":       "0"
       "@model":       "pci-root"
 
-    - "@types":       "usb"
+    - "@type":       "usb"
       "@index":       "0"
       "@model":       "piix3-uhci"
       address:
@@ -115,11 +115,11 @@ __domain_device_controller:
         "@slot":      "0x03"
         "@function":  "0x0"
   nxos:
-    - "@types":       "pci"
+    - "@type":       "pci"
       "@index":       "0"
       "@model":       "pci-root"
 
-    - "@types":       "usb"
+    - "@type":       "usb"
       "@index":       "0"
       "@model":       "piix3-uhci"
       address:
@@ -138,11 +138,11 @@ __domain_device_controller:
         "@slot":      "0x03"
         "@function":  "0x0"
   ovs:
-    - "@types":       "pci"
+    - "@type":       "pci"
       "@index":       "0"
       "@model":       "pci-root"
 
-    - "@types":       "usb"
+    - "@type":       "usb"
       "@index":       "0"
       "@model":       "piix3-uhci"
       address:
@@ -161,11 +161,11 @@ __domain_device_controller:
         "@slot":      "0x03"
         "@function":  "0x0"
   vyos:
-    - "@types":       "pci"
+    - "@type":       "pci"
       "@index":       "0"
       "@model":       "pci-root"
 
-    - "@types":       "usb"
+    - "@type":       "usb"
       "@index":       "0"
       "@model":       "piix3-uhci"
       address:
