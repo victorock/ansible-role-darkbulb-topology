@@ -613,7 +613,7 @@ def core(module):
         return fsm.start().absent().clean().end()
 
     elif state == 'absent':
-        return fsm.start().absent().end()
+        return fsm.start().inactive().absent().end()
 
 def main():
     module = AnsibleModule(

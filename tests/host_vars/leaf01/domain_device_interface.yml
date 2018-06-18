@@ -22,10 +22,10 @@ domain_device_interface:
           '@type': e1000
       source:
           '@address': 127.0.0.1
-          '@port': '12001'
+          '@port': '11002'
           local:
               '@address': 127.0.0.1
-              '@port': '21002'
+              '@port': '21001'
       target:
           '@dev': gig02
   -   '@type': udp

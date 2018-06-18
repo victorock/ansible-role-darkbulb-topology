@@ -16,18 +16,18 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 
 DOCUMENTATION = '''
 ---
-module: virt_net
-author: "Maciej Delmanowski (@drybjed)"
-version_added: "2.0"
-short_description: Manage libvirt network configuration
+module: virt_volume
+author: "Victor da Costa (@victorock)"
+version_added: "2.6"
+short_description: Manage libvirt storagevol configuration
 description:
-     - Manage I(libvirt) networks.
+     - Manage I(libvirt) volumes.
 options:
     name:
         required: true
-        aliases: ['network']
+        aliases: ['volume']
         description:
-            - name of the network being managed. Note that network must be previously
+            - name of the volume being managed. Note that volume must be previously
               defined with xml.
     state:
         required: false
@@ -62,26 +62,26 @@ requirements:
 
 EXAMPLES = '''
 # Ensure that a network is active (needs to be defined and built first)
-- virt_net:
+- virt_volume:
     state: active
     xml: "{{ lookup('template', 'network-template.xml.j2') }}"
     name: br_nat
 
 # Ensure that a network is inactive
-- virt_net:
+- virt_volume:
     state: inactive
     xml: "{{ lookup('template', 'network-template.xml.j2') }}"
     name: br_nat
 
 # Ensure that a given network will be started at boot
-- virt_net:
+- virt_volume:
     state: active
     xml: "{{ lookup('template', 'network-template.xml.j2') }}"
-    name: br_nat
+    name: vol001
     autostart: yes
 
 # Ensure that a given network will be started at boot
-- virt_net:
+- virt_volume:
     state: active
     xml: "{{ lookup('template', 'network-template.xml.j2') }}"
     name: br_nat
@@ -152,13 +152,13 @@ class LibvirtConnection(object):
         results = []
 
         # Get active entries
-        for name in self.conn.listNetworks():
-            entry = self.conn.networkLookupByName(name)
+        for name in self.conn.listVolumes():
+            entry = self.conn.storagePoolLookupByName(name)
             results.append(entry)
 
         # Get inactive entries
-        for name in self.conn.listDefinedNetworks():
-            entry = self.conn.networkLookupByName(name)
+        for name in self.conn.listVolumes():
+            entry = self.conn.storagePoolLookupByName(name)
             results.append(entry)
 
         if entryid == -1:
@@ -534,7 +534,7 @@ def core(module):
         return fsm.start().present().autostart().inactive().end()
 
     elif state == 'absent':
-        return fsm.start().inactive().absent().end()
+        return fsm.start().absent().end()
 
 def main():
     module = AnsibleModule(

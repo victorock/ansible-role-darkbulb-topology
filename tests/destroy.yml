@@ -1,11 +1,7 @@
 - name: "Darkbulb Topology"
-  hosts: darkbulb_topology
+  hosts: darkbulb_topology:&nxos
   gather_facts: no
   become: yes
-  # Hack to avoid race-condition when running multi-node topology in a single host
-  # Avoids race-condition in libvirt when setting up common resources
-#  serial:
-#  - 1
 
   roles:
     - test

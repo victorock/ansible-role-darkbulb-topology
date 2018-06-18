@@ -1,5 +1,6 @@
 - name: "destroy.network: Ensure absent network"
   virt_net:
-    name:   "{{ darkbulb_topology.network.network.name }}"
-    xml:    "{{ darkbulb_topology.network | to_xml }}"
-    state:  "absent"
+    name:       "{{ darkbulb_topology.network.network.name }}"
+    xml:        "{{ darkbulb_topology.network | to_xml }}"
+    autostart:  "no"
+    state:      "absent"

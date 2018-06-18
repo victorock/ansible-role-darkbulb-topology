@@ -9,7 +9,7 @@
 - name: "destroy.volume: Delete volume"
   command:
     virsh vol-delete \
-    --vol     "{{ darkbulb_topology.config.path }}/pools/{{ darkbulb_topology.storagevol.volume.name }}" \
+    --vol     "{{ darkbulb_topology.storagevol.volume.name }}" \
     --pool    "{{ darkbulb_topology.storagepool.pool.name }}"
   args:
     creates:  "{{ darkbulb_topology.storagepool.pool.target.path }}/{{ darkbulb_topology.storagevol.volume.name }}"

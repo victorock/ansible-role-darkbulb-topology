@@ -1,5 +1,5 @@
 - name: "destroy.domain: Ensure absent domain"
-  virt:
-    name:   "{{ darkbulb_topology.compute.domain.name }}"
-    xml:    "{{ darkbulb_topology.compute | to_xml }}"
-    state:  "absent"
+  virt_domain_config:
+    spec:    "{{ darkbulb_topology.compute | to_xml }}"
+    format:  "xml"
+    state:   "absent"

@@ -11,7 +11,7 @@ domain_device_interface:
           '@type': e1000
       source:
           '@address': 127.0.0.1
-          '@port': '21001'
+          '@port': '21002'
           local:
               '@address': 127.0.0.1
               '@port': '12001'
@@ -33,7 +33,7 @@ domain_device_interface:
           '@type': e1000
       source:
           '@address': 127.0.0.1
-          '@port': '23003'
+          '@port': '23002'
           local:
               '@address': 127.0.0.1
               '@port': '12003'
@@ -44,7 +44,7 @@ domain_device_interface:
           '@type': e1000
       source:
           '@address': 127.0.0.1
-          '@port': '24004'
+          '@port': '24002'
           local:
               '@address': 127.0.0.1
               '@port': '12004'

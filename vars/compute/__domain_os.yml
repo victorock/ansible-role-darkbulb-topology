@@ -30,11 +30,22 @@ __domain_os:
         $:        hvm
         '@arch':  x86_64
   nxos:
-    boot:
-        '@dev':   hd
     type:
-        $:        hvm
-        '@arch':  x86_64
+      $:              'hvm'
+      '@arch':        'x86_64'
+    loader:
+      '@readonly':      'yes'
+      '@secure':        'no'
+      '@type':          'rom'
+      $:                '/usr/share/OVMF/OVMF_CODE.fd'
+    bootmenu:
+      '@enable':        'yes'
+      '@timeout':       '3000'
+    bios:
+      '@useserial':     'yes'
+      '@rebootTimeout': '0'
+    boot:
+      '@dev':           'hd'
   ovs:
     boot:
         '@dev':   hd

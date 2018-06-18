@@ -1,4 +1,4 @@
-# (c) 2018, Victor da Costa <victorockeiro@gmail.com>
+# (c) 2018, Victor da Costa <@victorock>
 #
 # This file is part of Ansible
 #
@@ -19,14 +19,21 @@
 from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
 
+
 import json
-from xmltodict import unparse as XMLDecoder
-from xmltodict import parse as XMLEncoder
 from ansible.module_utils._text import to_text
+from ansible.errors import AnsibleError
+
+try:
+    from xmltodict import unparse as XMLEncoder
+    from xmltodict import parse as XMLDecoder
+except:
+    raise AnsibleError('module_utils.xml requires xmltodict library. Try: pip install xmltodict')
+
 
 def to_xml(data, *args, **kw):
     '''Convert JSON to XML'''
-    xml_data = XMLDecoder(data,
+    xml_data = XMLEncoder(data,
                         pretty=kw.get('pretty', False),
                         attr_prefix=kw.get('attr_prefix', '@'),
                         cdata_key=kw.get('cdata_key', '$'))
@@ -35,22 +42,12 @@ def to_xml(data, *args, **kw):
                 errors='surrogate_or_strict',
                 nonstring='simplerepr')
 
+
 def from_xml(data, *args, **kw):
     '''Convert XML to JSON'''
-    ordered_dict_data = XMLEncoder(data,
+    ordered_dict_data = XMLDecoder(data,
                                 process_namespaces=kw.get('process_namespaces', True),
                                 attr_prefix=kw.get('attr_prefix', '@'),
                                 cdata_key=kw.get('cdata_key', '$'))
 
     return json.dumps(ordered_dict_data)
-
-class FilterModule(object):
-    """Filters for libvirt"""
-
-    filter_map = {
-        'to_xml': to_xml,
-        'from_xml': from_xml
-    }
-
-    def filters(self):
-        return self.filter_map

@@ -1,0 +1,17 @@
+__domain_device_memballoon:
+  asa:
+    '@model':      'none'
+  eos:
+    '@model':      'none'
+  ios:
+    '@model':      'none'
+  iosxr:
+    '@model':      'none'
+  junos:
+    '@model':      'none'
+  nxos:
+    '@model':      'none'
+  ovs:
+    '@model':      'none'
+  vyos:
+    '@model':      'none'

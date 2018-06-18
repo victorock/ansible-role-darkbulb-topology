@@ -1,6 +1,11 @@
-- name: "create.domain: Ensure running domain"
-  virt:
-    name:       "{{ darkbulb_topology.compute.domain.name }}"
-    xml:        "{{ darkbulb_topology.compute | to_xml }}"
-    state:      "running"
-    autostart:  yes
+- name: "create.domain: Ensure present domain"
+  virt_domain_config:
+    spec:    "{{ darkbulb_topology.compute | to_xml }}"
+    format:  "xml"
+    state:   "present"
+
+- name: "create.domain: Ensure started domain"
+  virt_domain_config:
+    spec:    "{{ darkbulb_topology.compute | to_xml }}"
+    format:  "xml"
+    state:   "started"

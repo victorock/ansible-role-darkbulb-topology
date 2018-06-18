@@ -81,8 +81,8 @@ __domain:
     domain:
       '@type':      kvm
       clock:        "{{ __domain_clock[ansible_network_os]              }}"
-      cpu:
-        '@mode':    host-model
+#      cpu:
+#        '@mode':    host-model
       devices:      "{{ __domain_devices[ansible_network_os]            }}"
       features:     "{{ __domain_features[ansible_network_os]           }}"
       memory:       "{{ __domain_memory[ansible_network_os]             }}"
