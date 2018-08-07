@@ -1,0 +1,6 @@
+topology_builder:
+  config:       "{{ topology_builder_config        }}"
+  compute:      "{{ topology_builder_compute       }}"
+  network:      "{{ topology_builder_network       }}"
+  storagepool:  "{{ topology_builder_storagepool   }}"
+  storagevol:   "{{ topology_builder_storagevol    }}"

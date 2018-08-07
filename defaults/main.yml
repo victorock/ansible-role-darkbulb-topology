@@ -1,7 +1,15 @@
-darkbulb_topology_domain_image: "vios_l2-adventerprisek9-m.03.2017.qcow2"
+# Domain information
+# Default to use facts
+topology_builder_device_os:         "{{ ansible_network_os }}"
+topology_builder_device_name:       "{{ ansible_net_hostname }}"
+topology_builder_device_image:      "{{ ansible_net_image }}"
+topology_builder_device_interfaces: "{{ ansible_net_interfaces }}"
+topology_builder_device_neighbors:  "{{ ansible_net_neighbors }}"
+topology_builder_state:             "present"
 
-darkbulb_topology:
-  config:
-    user:       "{{ darkbulb_user     | default('darkbulb') }}"
-    group:      "{{ darkbulb_user     | default('darkbulb') }}"
-    path:       "{{ darkbulb_homedir  | default('/home/darkbulb') }}/config/"
+## Advanced
+topology_builder_config:          {}
+topology_builder_compute:         {}
+topology_builder_network:         {}
+topology_builder_storagepool:     {}
+topology_builder_storagevol:      {}

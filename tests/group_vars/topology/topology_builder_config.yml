@@ -1,0 +1,2 @@
+topology_builder_config:
+  image: "nxosv-final.7.0.3.I7.4.qcow2"

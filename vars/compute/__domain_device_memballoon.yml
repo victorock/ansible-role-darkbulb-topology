@@ -1,0 +1,17 @@
+__domain_device_memballoon:
+  asa:
+    '@model':      'virtio'
+  eos:
+    '@model':      'virtio'
+  ios:
+    '@model':      'virtio'
+  iosxr:
+    '@model':      'virtio'
+  junos:
+    '@model':      'virtio'
+  nxos:
+    '@model':      'virtio'
+  ovs:
+    '@model':      'virtio'
+  vyos:
+    '@model':      'virtio'

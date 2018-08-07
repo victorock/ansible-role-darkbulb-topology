@@ -1,0 +1,66 @@
+__domain_os:
+  asa:
+    boot:
+        '@dev':   hd
+    type:
+        $:        hvm
+        '@arch':  x86_64
+  eos:
+    boot:
+        '@dev':   hd
+    type:
+        $:        hvm
+        '@arch':  x86_64
+  ios:
+    type:
+      $: 'hvm'
+      '@arch': 'x86_64'
+    bootmenu:
+      '@enable': 'yes'
+      '@timeout': '3000'
+    bios:
+      '@useserial': 'yes'
+      '@rebootTimeout': '0'
+    boot:
+      '@dev': 'hd'
+  iosxr:
+    boot:
+      '@dev':   'hd'
+    type:
+      $:        'hvm'
+      '@arch':  'x86_64'
+  junos:
+    boot:
+        '@dev':   'hd'
+    type:
+        $:        'hvm'
+        '@arch':  'x86_64'
+  nxos:
+    type:
+      $: 'hvm'
+      '@arch': 'x86_64'
+    loader:
+      '@secure': 'no'
+      '@readonly': 'yes'
+      '@type': 'rom'
+      $: '/usr/share/OVMF/OVMF_CODE.fd'
+    bootmenu:
+      '@enable': 'yes'
+      '@timeout': '3000'
+    bios:
+      '@useserial': 'yes'
+      '@rebootTimeout': '0'
+    boot:
+      '@dev': 'hd'
+  ovs:
+    boot:
+        '@dev': 'hd'
+    type:
+        $: 'hvm'
+        '@arch': 'x86_64'
+  vyos:
+    boot:
+        '@dev': 'hd'
+    type:
+        $: 'hvm'
+        '@arch': 'x86_64'

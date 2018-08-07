@@ -1,15 +1,16 @@
-- name: "volume: Generate configuration file for [{{jxml.value.volume.name}}]"
+- name: "create.volume: Generate configuration"
   copy:
-    content:    "{{ jxml.value | to_xml }}"
-    dest:       "{{ darkbulb_topology.config.path }}/pools/{{ jxml.value.volume.name }}"
-    owner:      "{{ darkbulb_topology.config.user }}"
-    group:      "{{ darkbulb_topology.config.group }}"
-    validate: /usr/bin/virt-xml-validate %s storagevol
+    content:    "{{ topology_builder.storagevol | to_xml }}"
+    dest:       "{{ topology_builder.config.path }}/volumes/{{ topology_builder.storagevol.volume.name }}"
+# Buggy virt-xml-validate
+#    validate: /usr/bin/virt-xml-validate %s storagevol
 
-- name: "volume: Create volume [{{jxml.value.volume.name}}]"
+- name: "create.volume: Ensure presence"
   command:
-    virsh vol-create \
-    --file      "{{ darkbulb_topology.config.path }}/pools/{{ jxml.value.volume.name }}" \
-    --pool      "{{ darkbulb_topology.pools.default.pool.name }}"
+    virsh -c qemu:///system \
+      vol-create \
+        --file      "{{ topology_builder.config.path }}/volumes/{{ topology_builder.storagevol.volume.name }}" \
+        --pool      "{{ topology_builder.storagepool.pool.name }}"
   args:
-    creates:    "{{ darkbulb_topology.pools.default.pool.target.path }}/{{ jxml.value.volume.name }}"
+    chdir:  "{{ topology_builder.storagepool.pool.target.path }}"
+    creates:  "{{ topology_builder.storagevol.volume.name }}"

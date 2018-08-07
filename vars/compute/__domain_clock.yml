@@ -1,0 +1,17 @@
+__domain_clock:
+  asa:
+    "@offset":      "utc"
+  eos:
+    "@offset":      "utc"
+  ios:
+    "@offset":      "utc"
+  iosxr:
+    "@offset":      "utc"
+  junos:
+    "@offset":      "utc"
+  nxos:
+    "@offset":      "utc"
+  ovs:
+    "@offset":      "utc"
+  vyos:
+    "@offset":      "utc"

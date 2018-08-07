@@ -1,7 +1,7 @@
-Ansible Darkbulb Topology
+Ansible Topology Builder
 =========
 
-Simple Role to Deploy Darkbulb Network.
+Ansible Role to Build Network Topologies
 
 Requirements
 ------------
@@ -27,7 +27,7 @@ Example Playbook
   become: true
 
   roles:
-    - victorock.darkbulb-topology
+    - victorock.network_topology_builder
 ```
 
 License

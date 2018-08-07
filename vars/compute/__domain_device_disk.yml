@@ -1,0 +1,98 @@
+__domain_device_disk:
+  asa:
+    '@device': 'disk'
+    '@type': 'volume'
+    driver:
+      '@name':  qemu
+      '@type':  qcow2
+    source:
+      '@pool':  "{{ topology_builder.storagepool.pool.name }}"
+      '@volume': "{{ topology_builder.storagevol.volume.name }}"
+    target:
+      '@bus':   sata
+      '@dev':   vda
+  eos:
+    '@device': 'disk'
+    '@type': 'volume'
+    driver:
+      '@name':  qemu
+      '@type':  qcow2
+    source:
+      '@pool':  "{{ topology_builder.storagepool.pool.name }}"
+      '@volume': "{{ topology_builder.storagevol.volume.name }}"
+    target:
+      '@bus':   virtio
+      '@dev':   vda
+  ios:
+    '@device': 'disk'
+    '@type': 'volume'
+    driver:
+      '@name':  qemu
+      '@type':  qcow2
+    source:
+      '@pool':  "{{ topology_builder.storagepool.pool.name }}"
+      '@volume': "{{ topology_builder.storagevol.volume.name }}"
+    target:
+      '@bus':   'ide'
+      '@dev':   'hda'
+  iosxr:
+    '@device': 'disk'
+    '@type': 'volume'
+    driver:
+      '@name':  qemu
+      '@type':  qcow2
+    source:
+      '@pool':  "{{ topology_builder.storagepool.pool.name }}"
+      '@volume': "{{ topology_builder.storagevol.volume.name }}"
+    target:
+      '@bus':   sata
+      '@dev':   vda
+  junos:
+    '@device': 'disk'
+    '@type': 'volume'
+    driver:
+      '@name':  qemu
+      '@type':  qcow2
+    source:
+      '@pool':  "{{ topology_builder.storagepool.pool.name }}"
+      '@volume': "{{ topology_builder.storagevol.volume.name }}"
+    target:
+      '@bus':   sata
+      '@dev':   vda
+  nxos:
+    '@device': 'disk'
+    '@type': 'volume'
+    '@index':     '0'
+    driver:
+      '@name':  "qemu"
+      '@type':  "qcow2"
+    source:
+      '@pool':  "{{ topology_builder.storagepool.pool.name }}"
+      '@volume': "{{ topology_builder.storagevol.volume.name }}"
+    target:
+      '@bus':   'sata'
+      '@dev':   'vda'
+  ovs:
+    '@device': 'disk'
+    '@type': 'volume'
+    driver:
+      '@name':  qemu
+      '@type':  qcow2
+    source:
+      '@pool':  "{{ topology_builder.storagepool.pool.name }}"
+      '@volume': "{{ topology_builder.storagevol.volume.name }}"
+    target:
+      '@bus':   sata
+      '@dev':   vda
+  vyos:
+    '@device': 'disk'
+    '@type': 'volume'
+    driver:
+      '@name':  qemu
+      '@type':  qcow2
+    source:
+      '@pool':  "{{ topology_builder.storagepool.pool.name }}"
+      '@volume': "{{ topology_builder.storagevol.volume.name }}"
+    target:
+      '@bus':   sata
+      '@dev':   vda

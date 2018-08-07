@@ -1,0 +1,33 @@
+__domain_states:
+  asa:
+    on_poweroff:    "destroy"
+    on_reboot:      "restart"
+    on_crash:       "destroy"
+  eos:
+    on_poweroff:    "destroy"
+    on_reboot:      "restart"
+    on_crash:       "destroy"
+  ios:
+    on_poweroff:    "destroy"
+    on_reboot:      "restart"
+    on_crash:       "destroy"
+  iosxr:
+    on_poweroff:    "destroy"
+    on_reboot:      "restart"
+    on_crash:       "destroy"
+  junos:
+    on_poweroff:    "destroy"
+    on_reboot:      "restart"
+    on_crash:       "destroy"
+  nxos:
+    on_poweroff:    "destroy"
+    on_reboot:      "restart"
+    on_crash:       "destroy"
+  ovs:
+    on_poweroff:    "destroy"
+    on_reboot:      "restart"
+    on_crash:       "destroy"
+  vyos:
+    on_poweroff:    "destroy"
+    on_reboot:      "restart"
+    on_crash:       "destroy"

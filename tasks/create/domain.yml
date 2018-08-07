@@ -1,12 +1,15 @@
-- name: "domain: Define domain [{{jxml.value.domain.name}}]"
+- name: "create.domain: Ensure presence"
   virt:
-    name:       "{{ jxml.value.domain.name }}"
-    xml:        "{{ jxml.value | to_xml }}"
-    command:    "define"
+    name: "{{ topology_builder.compute.domain.name }}"
+    xml: "{{ topology_builder.compute | to_xml }}"
+    state: "present"
 
-- name: "domain: Ensure state of domain [{{jxml.value.domain.name}}]"
+- name: "create.domain: Ensure running"
   virt:
-    name:       "{{ jxml.value.domain.name }}"
-    xml:        "{{ jxml.value | to_xml }}"
-    state:      "running"
-    autostart:  yes
+    name: "{{ topology_builder.compute.domain.name }}"
+    state: "running"
+
+- name: "create.domain: Ensure autostart"
+  virt:
+    name: "{{ topology_builder.compute.domain.name }}"
+    autostart:  "yes"

@@ -1,0 +1,65 @@
+__domain_device_graphics:
+  asa:
+    "@type":        "vnc"
+    "@port":        "-1"
+    "@autoport":    "yes"
+    "@sharePolicy": "allow-exclusive"
+    listen:
+      "@type":      "address"
+      "@address":   "127.0.0.1"
+  eos:
+    "@type":        "vnc"
+    "@port":        "-1"
+    "@autoport":    "yes"
+    "@sharePolicy": "allow-exclusive"
+    listen:
+      "@type":      "address"
+      "@address":   "127.0.0.1"
+  ios:
+    "@type":        "vnc"
+    "@port":        "-1"
+    "@autoport":    "yes"
+    "@sharePolicy": "allow-exclusive"
+    listen:
+      "@type":      "address"
+      "@address":   "127.0.0.1"
+  iosxr:
+    "@type":        "vnc"
+    "@port":        "-1"
+    "@autoport":    "yes"
+    "@sharePolicy": "allow-exclusive"
+    listen:
+      "@type":      "address"
+      "@address":   "127.0.0.1"
+  junos:
+    "@type":        "vnc"
+    "@port":        "-1"
+    "@autoport":    "yes"
+    "@sharePolicy": "allow-exclusive"
+    listen:
+      "@type":      "address"
+      "@address":   "127.0.0.1"
+  nxos:
+    "@type":        "vnc"
+    "@port":        "-1"
+    "@autoport":    "yes"
+    "@sharePolicy": "allow-exclusive"
+    listen:
+      "@type":      "address"
+      "@address":   "127.0.0.1"
+  ovs:
+    "@type":        "vnc"
+    "@port":        "-1"
+    "@autoport":    "yes"
+    "@sharePolicy": "allow-exclusive"
+    listen:
+      "@type":      "address"
+      "@address":   "127.0.0.1"
+  vyos:
+    "@type":        "vnc"
+    "@port":        "-1"
+    "@autoport":    "yes"
+    "@sharePolicy": "allow-exclusive"
+    listen:
+      "@type":      "address"
+      "@address":   "127.0.0.1"

@@ -1,0 +1,17 @@
+__domain_vcpu:
+  asa:
+    $:            '2'
+  eos:
+    $:            '2'
+  ios:
+    $:            '1'
+  iosxr:
+    $:            '2'
+  junos:
+    $:            '2'
+  nxos:
+    $:            '2'
+  ovs:
+    $:            '1'
+  vyos:
+    $:            '1'

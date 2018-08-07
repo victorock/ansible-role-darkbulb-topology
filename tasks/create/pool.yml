@@ -1,18 +1,15 @@
-- name: "pool: Define pool [{{jxml.value.pool.name}}]"
+- name: "create.pool: Ensure presence"
   virt_pool:
-    name:       "{{ jxml.value.pool.name }}"
-    xml:        "{{ jxml.value | to_xml }}"
-    command:    "define"
+    name:   "{{ topology_builder.storagepool.pool.name }}"
+    xml:    "{{ topology_builder.storagepool | to_xml }}"
+    state:  "present"
 
-- name: "pool: Define pool [{{jxml.value.pool.name}}]"
+- name: "create.pool: Ensure active"
   virt_pool:
-    name:       "{{ jxml.value.pool.name }}"
-    xml:        "{{ jxml.value | to_xml }}"
-    state:      "active"
+    name:   "{{ topology_builder.storagepool.pool.name }}"
+    state:  "active"
 
-- name: "pool: Ensure state of pool [{{jxml.value.pool.name}}]"
+- name: "create.pool: Ensure autostart"
   virt_pool:
-    name:       "{{ jxml.value.pool.name }}"
-    xml:        "{{ jxml.value | to_xml }}"
-    state:      "present"
-    autostart:  yes
+    name:       "{{ topology_builder.storagepool.pool.name }}"
+    autostart:  "yes"

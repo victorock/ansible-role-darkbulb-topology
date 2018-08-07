@@ -1,0 +1,5 @@
+__config:
+  dirs:
+  - "volumes"
+  path: "~/.darkbulb"
+  image: "{{ topology_builder_device_image }}.qcow2"

@@ -1,0 +1,49 @@
+__domain_device_interface:
+  asa:
+    -   '@type':      "network"
+        model:
+          '@type':    e1000
+        source:
+          '@network': "topology-builder-management"
+  eos:
+    -   '@type':      "network"
+        model:
+          '@type':    e1000
+        source:
+          '@network': "topology-builder-management"
+  ios:
+    -   '@type':      "network"
+        model:
+          '@type':    e1000
+        source:
+          '@network': "topology-builder-management"
+  iosxr:
+    -   '@type':      "network"
+        model:
+          '@type':    e1000
+        source:
+          '@network': "topology-builder-management"
+  junos:
+    -   '@type':      "network"
+        model:
+          '@type':    e1000
+        source:
+          '@network': "topology-builder-management"
+  nxos:
+    -   '@type':      "network"
+        model:
+          '@type':    e1000
+        source:
+          '@network': "topology-builder-management"
+  ovs:
+    -   '@type':      "network"
+        model:
+          '@type':    e1000
+        source:
+          '@network': "topology-builder-management"
+  vyos:
+    -   '@type':      "network"
+        model:
+          '@type':    e1000
+        source:
+          '@network': "topology-builder-management"

@@ -1,0 +1,49 @@
+__domain_device_video:
+  asa:
+    model:
+      "@type":      "cirrus"
+      "@vram":      "16384"
+      "@heads":     "1"
+      "@primary":   "yes"
+  eos:
+    model:
+      "@type":      "cirrus"
+      "@vram":      "16384"
+      "@heads":     "1"
+      "@primary":   "yes"
+  ios:
+    model:
+      "@type":      "cirrus"
+      "@vram":      "16384"
+      "@heads":     "1"
+      "@primary":   "yes"
+  iosxr:
+    model:
+      "@type":      "cirrus"
+      "@vram":      "16384"
+      "@heads":     "1"
+      "@primary":   "yes"
+  junos:
+    model:
+      "@type":      "cirrus"
+      "@vram":      "16384"
+      "@heads":     "1"
+      "@primary":   "yes"
+  nxos:
+    model:
+      "@type":      "cirrus"
+      "@vram":      "16384"
+      "@heads":     "1"
+      "@primary":   "yes"
+  ovs:
+    model:
+      "@type":      "cirrus"
+      "@vram":      "16384"
+      "@heads":     "1"
+      "@primary":   "yes"
+  vyos:
+    model:
+      "@type":      "cirrus"
+      "@vram":      "16384"
+      "@heads":     "1"
+      "@primary":   "yes"

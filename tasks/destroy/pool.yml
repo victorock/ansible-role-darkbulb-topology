@@ -1,9 +1,0 @@
-- name: "network: Ensure state of pool [{{jxml.value.pool.name}}]"
-  virt_pool:
-    name:     "{{ jxml.value.pool.name }}"
-    state:    "inactive"
-
-- name: "network: Ensure state of pool [{{jxml.value.pool.name}}]"
-  virt_pool:
-    name:     "{{ jxml.value.pool.name }}"
-    state:    "absent"

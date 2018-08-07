@@ -1,11 +1,5 @@
-- name: "domain: Ensure state of domain [{{jxml.value.domain.name}}]"
+---
+- name: "destroy.domain: Ensure absent domain"
   virt:
-    name:     "{{ jxml.value.domain.name }}"
-    xml:      "{{ jxml.value | to_xml }}"
-    command:  "destroy"
-
-- name: "domain: Ensure state of domain [{{jxml.value.domain.name}}]"
-  virt:
-    name:     "{{ jxml.value.domain.name }}"
-    xml:      "{{ jxml.value | to_xml }}"
-    command:  "undefine"
+    name:   "{{ topology_builder.compute.domain.name }}"
+    state:  "absent"

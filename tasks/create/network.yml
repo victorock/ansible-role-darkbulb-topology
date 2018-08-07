@@ -1,17 +1,15 @@
-- name: "network: Define network [{{jxml.value.network.name}}]"
+- name: "create.network: Ensure presence"
   virt_net:
-    name:       "{{ jxml.value.network.name }}"
-    xml:        "{{ jxml.value | to_xml }}"
-    command:    "define"
-
-- name: "network: Create network [{{jxml.value.network.name}}]"
-  virt_net:
-    name:       "{{ jxml.value.network.name }}"
-    xml:        "{{ jxml.value | to_xml }}"
+    name:       "{{ topology_builder.network.network.name }}"
+    xml:        "{{ topology_builder.network | to_xml }}"
     state:      "present"
 
-- name: "network: Create network [{{jxml.value.network.name}}]"
+- name: "create.network: Ensure active"
   virt_net:
-    name:       "{{ jxml.value.network.name }}"
-    xml:        "{{ jxml.value | to_xml }}"
+    name:       "{{ topology_builder.network.network.name }}"
     state:      "active"
+
+- name: "create.network: Ensure autostart"
+  virt_net:
+    name:       "{{ topology_builder.network.network.name }}"
+    autostart:  "yes"

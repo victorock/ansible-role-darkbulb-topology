@@ -1,13 +1,12 @@
-- name: "Darkbulb Topology"
-  hosts: darkbulb
+- hosts: topology
   gather_facts: no
   become: yes
+  # Hack to avoid race-condition when running multi-node topology in a single host
+  # Avoids race-condition in libvirt when setting up common resources
+  serial:
+  - 1
 
   roles:
-    - test
-
-  tasks:
-
-    - include_role:
-        name: test
-        tasks_from: "create.yml"
+    - role: role_under_test
+      autorun: yes
+      topology_builder_state: absent

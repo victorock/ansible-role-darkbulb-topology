@@ -1,0 +1,7 @@
+__pool:
+  dir:
+    pool:
+      '@type':  'dir'
+      name: "images"
+      target:
+        path: "/var/lib/libvirt/images"

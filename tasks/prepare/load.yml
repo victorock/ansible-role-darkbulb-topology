@@ -1,0 +1,12 @@
+- name: "prepare.load: Topology Variables"
+  include_vars:
+    dir: "vars/"
+
+- name: "prepare.load: Set topology_builder"
+  set_fact:
+    topology_builder: "{{ __darkbulb_topology  | combine( topology_builder, recursive=True ) }}"
+
+- name: "prepare.load: Display all variables/facts (verbosity: 4)"
+  debug:
+    var: hostvars[inventory_hostname]
+    verbosity: 1

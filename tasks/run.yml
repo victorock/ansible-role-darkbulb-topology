@@ -1,1 +1,10 @@
-- include_tasks: create.yml
+- name: "prepare"
+  include_tasks:  "prepare.yml"
+
+- name: "present"
+  include_tasks: create.yml
+  when: topology_builder_state == 'present'
+
+- name: "absent"
+  include_tasks: destroy.yml
+  when: topology_builder_state == 'absent'

@@ -1,0 +1,4 @@
+topology_builder_compute:
+  domain:
+    devices:
+      interface: "{{ domain_device_interface }}"

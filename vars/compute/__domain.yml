@@ -1,0 +1,127 @@
+__domain:
+  asa:
+    domain:
+      '@type':      kvm
+      clock:        "{{ __domain_clock[topology_builder_network_os]              }}"
+      cpu:
+        '@mode':    host-model
+      devices:      "{{ __domain_devices[topology_builder_network_os]            }}"
+      features:     "{{ __domain_features[topology_builder_network_os]           }}"
+      memory:       "{{ __domain_memory[topology_builder_network_os]             }}"
+      name:         "{{ topology_builder_device_name                              }}"
+      on_crash:     "{{ __domain_states[topology_builder_network_os].on_crash    }}"
+      on_poweroff:  "{{ __domain_states[topology_builder_network_os].on_poweroff }}"
+      on_reboot:    "{{ __domain_states[topology_builder_network_os].on_reboot   }}"
+      os:           "{{ __domain_os[topology_builder_network_os]                 }}"
+      resource:     "{{ __domain_resource[topology_builder_network_os]           }}"
+      vcpu:         "{{ __domain_vcpu[topology_builder_network_os]               }}"
+  eos:
+    domain:
+      '@type':      kvm
+      clock:        "{{ __domain_clock[topology_builder_network_os]              }}"
+      cpu:
+        '@mode':    host-model
+      devices:      "{{ __domain_devices[topology_builder_network_os]            }}"
+      features:     "{{ __domain_features[topology_builder_network_os]           }}"
+      memory:       "{{ __domain_memory[topology_builder_network_os]             }}"
+      name:         "{{ topology_builder_device_name                              }}"
+      on_crash:     "{{ __domain_states[topology_builder_network_os].on_crash    }}"
+      on_poweroff:  "{{ __domain_states[topology_builder_network_os].on_poweroff }}"
+      on_reboot:    "{{ __domain_states[topology_builder_network_os].on_reboot   }}"
+      os:           "{{ __domain_os[topology_builder_network_os]                 }}"
+      resource:     "{{ __domain_resource[topology_builder_network_os]           }}"
+      vcpu:         "{{ __domain_vcpu[topology_builder_network_os]               }}"
+  ios:
+    domain:
+      '@type':      qemu
+      cpu:
+        '@mode':    host-model
+      devices:      "{{ __domain_devices[topology_builder_network_os]            }}"
+      memory:       "{{ __domain_memory[topology_builder_network_os]             }}"
+      name:         "{{ topology_builder_device_name                              }}"
+      on_crash:     "{{ __domain_states[topology_builder_network_os].on_crash    }}"
+      on_poweroff:  "{{ __domain_states[topology_builder_network_os].on_poweroff }}"
+      on_reboot:    "{{ __domain_states[topology_builder_network_os].on_reboot   }}"
+      os:           "{{ __domain_os[topology_builder_network_os]                 }}"
+      resource:     "{{ __domain_resource[topology_builder_network_os]           }}"
+      vcpu:         "{{ __domain_vcpu[topology_builder_network_os]               }}"
+  iosxr:
+    domain:
+      '@type':      kvm
+      clock:        "{{ __domain_clock[topology_builder_network_os]              }}"
+      cpu:
+        '@mode':    host-model
+      devices:      "{{ __domain_devices[topology_builder_network_os]            }}"
+      features:     "{{ __domain_features[topology_builder_network_os]           }}"
+      memory:       "{{ __domain_memory[topology_builder_network_os]             }}"
+      name:         "{{ topology_builder_device_name                              }}"
+      on_crash:     "{{ __domain_states[topology_builder_network_os].on_crash    }}"
+      on_poweroff:  "{{ __domain_states[topology_builder_network_os].on_poweroff }}"
+      on_reboot:    "{{ __domain_states[topology_builder_network_os].on_reboot   }}"
+      os:           "{{ __domain_os[topology_builder_network_os]                 }}"
+      resource:     "{{ __domain_resource[topology_builder_network_os]           }}"
+      vcpu:         "{{ __domain_vcpu[topology_builder_network_os]               }}"
+  junos:
+    domain:
+      '@type':      kvm
+      clock:        "{{ __domain_clock[topology_builder_network_os]              }}"
+      cpu:
+        '@mode':    host-model
+      devices:      "{{ __domain_devices[topology_builder_network_os]            }}"
+      features:     "{{ __domain_features[topology_builder_network_os]           }}"
+      memory:       "{{ __domain_memory[topology_builder_network_os]             }}"
+      name:         "{{ topology_builder_device_name                              }}"
+      on_crash:     "{{ __domain_states[topology_builder_network_os].on_crash    }}"
+      on_poweroff:  "{{ __domain_states[topology_builder_network_os].on_poweroff }}"
+      on_reboot:    "{{ __domain_states[topology_builder_network_os].on_reboot   }}"
+      os:           "{{ __domain_os[topology_builder_network_os]                 }}"
+      resource:     "{{ __domain_resource[topology_builder_network_os]           }}"
+      vcpu:         "{{ __domain_vcpu[topology_builder_network_os]               }}"
+  nxos:
+    domain:
+      '@type':      kvm
+      clock:        "{{ __domain_clock[topology_builder_network_os]              }}"
+      cpu:
+        '@mode':    host-model
+      devices:      "{{ __domain_devices[topology_builder_network_os]            }}"
+      features:     "{{ __domain_features[topology_builder_network_os]           }}"
+      memory:       "{{ __domain_memory[topology_builder_network_os]             }}"
+      name:         "{{ topology_builder_device_name                              }}"
+      on_crash:     "{{ __domain_states[topology_builder_network_os].on_crash    }}"
+      on_poweroff:  "{{ __domain_states[topology_builder_network_os].on_poweroff }}"
+      on_reboot:    "{{ __domain_states[topology_builder_network_os].on_reboot   }}"
+      os:           "{{ __domain_os[topology_builder_network_os]                 }}"
+      resource:     "{{ __domain_resource[topology_builder_network_os]           }}"
+      vcpu:         "{{ __domain_vcpu[topology_builder_network_os]               }}"
+  ovs:
+    domain:
+      '@type':      kvm
+      clock:        "{{ __domain_clock[topology_builder_network_os]              }}"
+      cpu:
+        '@mode':    host-model
+      devices:      "{{ __domain_devices[topology_builder_network_os]            }}"
+      features:     "{{ __domain_features[topology_builder_network_os]           }}"
+      memory:       "{{ __domain_memory[topology_builder_network_os]             }}"
+      name:         "{{ topology_builder_device_name                              }}"
+      on_crash:     "{{ __domain_states[topology_builder_network_os].on_crash    }}"
+      on_poweroff:  "{{ __domain_states[topology_builder_network_os].on_poweroff }}"
+      on_reboot:    "{{ __domain_states[topology_builder_network_os].on_reboot   }}"
+      os:           "{{ __domain_os[topology_builder_network_os]                 }}"
+      resource:     "{{ __domain_resource[topology_builder_network_os]           }}"
+      vcpu:         "{{ __domain_vcpu[topology_builder_network_os]               }}"
+  vyos:
+    domain:
+      '@type':      kvm
+      clock:        "{{ __domain_clock[topology_builder_network_os]              }}"
+      cpu:
+        '@mode':    host-model
+      devices:      "{{ __domain_devices[topology_builder_network_os]            }}"
+      features:     "{{ __domain_features[topology_builder_network_os]           }}"
+      memory:       "{{ __domain_memory[topology_builder_network_os]             }}"
+      name:         "{{ topology_builder_device_name                              }}"
+      on_crash:     "{{ __domain_states[topology_builder_network_os].on_crash    }}"
+      on_poweroff:  "{{ __domain_states[topology_builder_network_os].on_poweroff }}"
+      on_reboot:    "{{ __domain_states[topology_builder_network_os].on_reboot   }}"
+      os:           "{{ __domain_os[topology_builder_network_os]                 }}"
+      resource:     "{{ __domain_resource[topology_builder_network_os]           }}"
+      vcpu:         "{{ __domain_vcpu[topology_builder_network_os]               }}"

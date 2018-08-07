@@ -1,0 +1,2 @@
+ansible_network_os:             "nxos"
+ansible_host:                   "darkbulb-nxos.devops.victorock.io"

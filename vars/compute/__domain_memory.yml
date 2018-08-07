@@ -1,0 +1,25 @@
+__domain_memory:
+  asa:
+    $:        '2048'
+    '@unit':  MiB
+  eos:
+    $:        '2048'
+    '@unit':  MiB
+  ios:
+    $:        '1024'
+    '@unit':  MiB
+  iosxr:
+    $:        '2048'
+    '@unit':  MiB
+  junos:
+    $:        '4096'
+    '@unit':  MiB
+  nxos:
+    $:        '8192'
+    '@unit':  MiB
+  ovs:
+    $:        '512'
+    '@unit':  MiB
+  vyos:
+    $:        '512'
+    '@unit':  MiB
